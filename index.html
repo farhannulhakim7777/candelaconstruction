@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candela Construction - Building Quality, Building Life</title>
+  <meta name="description"
+    content="Candela Construction — Premier Design & Build firm. Contractor, MEP Systems, Interior & Exterior, Architecture Design. Based in Tangerang, Indonesia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════ NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="/logo/candela.png" alt="Candela Logo" class="logo-img">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#commitment">HSE</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact" class="nav-cta">Collaborate</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ MOBILE MENU — body-level, never clipped by any parent ═══ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#commitment">HSE</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact" class="mob-cta">Collaborate</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <section id="hero">
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide active"
+        style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1800&q=80')"></div>
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80')"></div>
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1800&q=80')"></div>
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1800&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-inner">
+
+
+        <h1 class="hero-headline">
+          <span class="line-wrap"><em>Building</em></span>
+          <span class="line-wrap">Quality,</span>
+          <span class="line-wrap"><em>Building</em></span>
+          <span class="line-wrap">Life.</span>
+        </h1>
+
+        <div class="hero-eyebrow">Est. 2021 — Tangerang, Indonesia</div>
+        <p class="hero-sub">Design & Build excellence — from foundation to finish.</p>
+        
+
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn-primary">View Our Work</a>
+          <a href="#contact" class="btn-ghost">Start a Project</a>
+        </div>
+
+      </div>
+    </div>
+    <!-- <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div> -->
+    <div class="hero-slide-counter">
+      <span id="currentSlide">01</span>
+      <div class="counter-track">
+        <div class="counter-fill" id="counterFill"></div>
+      </div>
+      <span id="totalSlides">04</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span>Contractor</span><span class="sep">✦</span>
+      <span>MEP Systems</span><span class="sep">✦</span>
+      <span>Interior & Exterior</span><span class="sep">✦</span>
+      <span>Architecture Design</span><span class="sep">✦</span>
+      <span>Zero Accident Policy</span><span class="sep">✦</span>
+      <span>SNI Standards</span><span class="sep">✦</span>
+      <span>Design & Build</span><span class="sep">✦</span>
+      <span>Est. 2021</span><span class="sep">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span>Contractor</span><span class="sep">✦</span>
+      <span>MEP Systems</span><span class="sep">✦</span>
+      <span>Interior & Exterior</span><span class="sep">✦</span>
+      <span>Architecture Design</span><span class="sep">✦</span>
+      <span>Zero Accident Policy</span><span class="sep">✦</span>
+      <span>SNI Standards</span><span class="sep">✦</span>
+      <span>Design & Build</span><span class="sep">✦</span>
+      <span>Est. 2021</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <div class="about-img-main">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+              alt="Candela Construction team at work" loading="lazy" />
+          </div>
+          <div class="about-img-accent">
+            <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+              alt="Precision engineering" loading="lazy" />
+            <div class="stat-badge">
+              <strong>3+</strong>
+              <span>Years of Excellence</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal delay-1">
+          <div class="section-label">About Candela</div>
+          <h2 class="section-heading">Where Precision<br /><em>Meets Purpose.</em></h2>
+          <p class="about-lead">Founded in 2021, Candela Construction emerged with a singular conviction: that great
+            spaces are not merely built - they are <em>crafted</em>.</p>
+          <p>From our base in Tangerang, we have grown into a full-spectrum Design & Build firm that unites
+            architectural vision with engineering discipline. Every project — residential or commercial - is approached
+            with the same rigorous attention to material, method, and meaning.</p>
+          <p>We don't just construct buildings. We create environments that endure, inspire, and enrich the lives of
+            those who inhabit them. That is the Candela standard.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <strong>50+</strong>
+              <span>Projects Completed</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>SNI Compliant</span>
+            </div>
+            <div class="stat">
+              <strong>0</strong>
+              <span>Accident Record</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SERVICES -->
+  <section id="services" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label light">What We Do</div>
+        <h2 class="section-heading light">Our Core<br /><em>Services.</em></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" data-index="01">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 42V20L24 6l18 14v22H30V30h-12v12H6z" stroke="currentColor" stroke-width="2"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="card-num">01</div>
+          <h3>Contractor</h3>
+          <p class="card-brief">Full-cycle construction management from groundbreaking to handover.</p>
+          <div class="card-detail">
+            <p>We deliver end-to-end construction services — managing timelines, subcontractors, materials, and quality
+              control. Our experienced project managers ensure every build adheres to specification, budget, and
+              schedule without compromise.</p>
+            <ul>
+              <li>Residential & Commercial Build</li>
+              <li>Project Management</li>
+              <li>Site Supervision</li>
+              <li>Subcontractor Coordination</li>
+            </ul>
+          </div>
+          <div class="card-arrow">→</div>
+        </div>
+
+        <div class="service-card reveal delay-1" data-index="02">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2" />
+              <path
+                d="M24 4v6M24 38v6M4 24h6M38 24h6M9.4 9.4l4.2 4.2M34.4 34.4l4.2 4.2M34.4 9.4l-4.2 4.2M9.4 38.6l4.2-4.2"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="card-num">02</div>
+          <h3>MEP Systems</h3>
+          <p class="card-brief">Integrated Mechanical, Electrical & Plumbing engineering solutions.</p>
+          <div class="card-detail">
+            <p>Our MEP engineers design and install complex building systems that work invisibly — ensuring comfort,
+              safety, and efficiency. We integrate all disciplines into a seamless, code-compliant whole that performs
+              for decades.</p>
+            <ul>
+              <li>HVAC & Ventilation Design</li>
+              <li>Electrical System Integration</li>
+              <li>Plumbing & Drainage</li>
+              <li>Fire Protection Systems</li>
+            </ul>
+          </div>
+          <div class="card-arrow">→</div>
+        </div>
+
+        <div class="service-card reveal delay-2" data-index="03">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="36" height="36" rx="2" stroke="currentColor" stroke-width="2" />
+              <path d="M6 18h36M18 18v24" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="card-num">03</div>
+          <h3>Interior & Exterior</h3>
+          <p class="card-brief">Considered design for every surface — inside and out.</p>
+          <div class="card-detail">
+            <p>From bespoke cabinetry to façade cladding, our design team crafts spaces with a strong material language
+              and spatial logic. We believe the boundary between interior and exterior should be a conversation, not a
+              divide.</p>
+            <ul>
+              <li>Interior Space Planning</li>
+              <li>Material & Finish Specification</li>
+              <li>Façade & Landscape Design</li>
+              <li>Furniture & Fixture Coordination</li>
+            </ul>
+          </div>
+          <div class="card-arrow">→</div>
+        </div>
+
+        <div class="service-card reveal delay-3" data-index="04">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 40V14l16-8 16 8v26" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <rect x="18" y="28" width="12" height="12" stroke="currentColor" stroke-width="2" />
+              <path d="M8 22h32M8 30h10M30 30h10" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="card-num">04</div>
+          <h3>Architecture Design</h3>
+          <p class="card-brief">Purposeful architectural concepts rooted in context and craft.</p>
+          <div class="card-detail">
+            <p>Our architects develop considered designs that respond to site, climate, and human behaviour. We produce
+              complete documentation sets — from concept sketches through to construction drawings — with precision and
+              care.</p>
+            <ul>
+              <li>Conceptual & Schematic Design</li>
+              <li>Design Development</li>
+              <li>Construction Documentation</li>
+              <li>Permit & Regulatory Assistance</li>
+            </ul>
+          </div>
+          <div class="card-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ COMMITMENT / HSE -->
+  <section id="commitment" class="section">
+    <div class="container">
+      <div class="commitment-inner">
+        <div class="commitment-text reveal">
+          <div class="section-label">Safety & Standards</div>
+          <h2 class="section-heading">Our Commitment<br /><em>to Zero.</em></h2>
+          <p>Health, Safety, and Environment is not a compliance checkbox at Candela — it is a core value embedded in
+            every action on every site. Our Zero Accident Policy means that no deadline or budget pressure ever
+            overrides the safety of our people.</p>
+          <p>All Candela projects are designed and executed in full conformance with <strong>SNI (Standar Nasional
+              Indonesia)</strong> standards, ensuring structural integrity, fire resistance, and long-term durability
+            that protects occupants and investment alike.</p>
+          <a href="#contact" class="btn-primary">Discuss Your Project</a>
+        </div>
+        <div class="commitment-pillars reveal delay-1">
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="24" stroke="var(--gold)" stroke-width="2" />
+                <path d="M20 28l6 6 10-12" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h4>Zero Accident Policy</h4>
+            <p>Mandatory safety inductions, PPE enforcement, and daily toolbox talks across all active sites.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 56 56" fill="none">
+                <path d="M28 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z" stroke="var(--gold)" stroke-width="2"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h4>SNI Standards</h4>
+            <p>Full compliance with Standar Nasional Indonesia for structural, electrical, and fire protection systems.
+            </p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 56 56" fill="none">
+                <rect x="12" y="20" width="32" height="24" rx="2" stroke="var(--gold)" stroke-width="2" />
+                <path d="M20 20v-4a8 8 0 0116 0v4" stroke="var(--gold)" stroke-width="2" />
+                <circle cx="28" cy="32" r="3" stroke="var(--gold)" stroke-width="2" />
+              </svg>
+            </div>
+            <h4>Quality Assurance</h4>
+            <p>Multi-stage inspection protocols and third-party testing at critical construction milestones.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 56 56" fill="none">
+                <path d="M28 12c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16" stroke="var(--gold)" stroke-width="2"
+                  stroke-linecap="round" />
+                <path d="M36 12l4-4M36 12h6M36 12v6" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h4>Environmental Care</h4>
+            <p>Responsible waste management, dust suppression, and minimal-disruption site practices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="commitment-bg-text" aria-hidden="true">ZERO</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ PORTFOLIO -->
+  <section id="portfolio" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label light">Our Work</div>
+        <h2 class="section-heading light">Selected<br /><em>Projects.</em></h2>
+      </div>
+      <div class="portfolio-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- ── Origin House ─────────────────────────── -->
+        <div class="portfolio-item reveal" data-category="residential" data-project="Origin House"
+          data-project-cat="Residential"
+          data-project-desc="A contemplative family residence that draws on vernacular form and contemporary detailing."
+          data-images='[
+            {"src":"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85","caption":"Origin House — Façade & Entry"},
+            {"src":"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85","caption":"Origin House — Living Area"},
+            {"src":"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85","caption":"Origin House — Master Suite"}
+          ]'>
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Origin House"
+              loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Residential</span>
+                <h3>Origin House</h3>
+                <p>A contemplative family residence that draws on vernacular form and contemporary detailing.</p>
+              </div>
+              <button class="portfolio-zoom" aria-label="View Origin House">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MT House ─────────────────────────────── -->
+        <div class="portfolio-item reveal delay-1" data-category="residential" data-project="MT House"
+          data-project-cat="Residential"
+          data-project-desc="A bold geometric form softened by warm material choices and lush landscaping." data-images='[
+            {"src":"https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85","caption":"MT House — Street Elevation"},
+            {"src":"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=85","caption":"MT House — Interior Courtyard"},
+            {"src":"https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=85","caption":"MT House — Kitchen & Dining"}
+          ]'>
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt="MT House"
+              loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Residential</span>
+                <h3>MT House</h3>
+                <p>A bold geometric form softened by warm material choices and lush landscaping.</p>
+              </div>
+              <button class="portfolio-zoom" aria-label="View MT House">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Harlow Residence ─────────────────────── -->
+        <div class="portfolio-item reveal delay-2 tall" data-category="residential" data-project="Harlow Residence"
+          data-project-cat="Residential"
+          data-project-desc="Two-storey contemporary home with seamless indoor-outdoor connectivity." data-images='[
+            {"src":"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=85","caption":"Harlow Residence — Rear Garden View"},
+            {"src":"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=85","caption":"Harlow Residence — Pool Deck"},
+            {"src":"https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=85","caption":"Harlow Residence — Upper Terrace"}
+          ]'>
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Harlow Residence"
+              loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Residential</span>
+                <h3>Harlow Residence</h3>
+                <p>Two-storey contemporary home with seamless indoor-outdoor connectivity.</p>
+              </div>
+              <button class="portfolio-zoom" aria-label="View Harlow Residence">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Bube Store ───────────────────────────── -->
+        <div class="portfolio-item reveal" data-category="commercial" data-project="Bube Store"
+          data-project-cat="Commercial Specialty"
+          data-project-desc="A retail concept space prioritising experiential flow and brand identity through architecture."
+          data-images='[
+            {"src":"https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=85","caption":"Bube Store — Main Shopfront"},
+            {"src":"https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&q=85","caption":"Bube Store — Interior Display"},
+            {"src":"https://images.unsplash.com/photo-1604014056022-b76f67a65cbb?w=1200&q=85","caption":"Bube Store — Fitting & Counter Area"}
+          ]'>
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Bube Store"
+              loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Commercial Specialty</span>
+                <h3>Bube Store</h3>
+                <p>A retail concept space prioritising experiential flow and brand identity through architecture.</p>
+              </div>
+              <button class="portfolio-zoom" aria-label="View Bube Store">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Neph Store ───────────────────────────── -->
+        <div class="portfolio-item reveal delay-1 wide" data-category="commercial" data-project="Neph Store"
+          data-project-cat="Commercial Specialty"
+          data-project-desc="F&B specialty fitout with custom joinery, curated lighting design and full MEP integration."
+          data-images='[
+            {"src":"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=85","caption":"Neph Store — Dining Floor"},
+            {"src":"https://images.unsplash.com/photo-1560053608-13721b18f4bd?w=1200&q=85","caption":"Neph Store — Bar & Counter"},
+            {"src":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=85","caption":"Neph Store — Private Dining"}
+          ]'>
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80" alt="Neph Store"
+              loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Commercial Specialty</span>
+                <h3>Neph Store</h3>
+                <p>F&B specialty fitout with custom joinery, curated lighting design and full MEP integration.</p>
+              </div>
+              <button class="portfolio-zoom" aria-label="View Neph Store">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Verdant Villa ────────────────────────── -->
+        <div class="portfolio-item reveal delay-2" data-category="residential" data-project="Verdant Villa"
+          data-project-cat="Residential"
+          data-project-desc="A hillside retreat defined by cross-ventilation, natural stone, and cantilevered terraces."
+          data-images='[
+            {"src":"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=85","caption":"Verdant Villa — Approach & Entry"},
+            {"src":"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=85","caption":"Verdant Villa — Pool & Terrace"},
+            {"src":"https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=1200&q=85","caption":"Verdant Villa — Open Living"}
+          ]'>
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Verdant Villa"
+              loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Residential</span>
+                <h3>Verdant Villa</h3>
+                <p>A hillside retreat defined by cross-ventilation, natural stone, and cantilevered terraces.</p>
+              </div>
+              <button class="portfolio-zoom" aria-label="View Verdant Villa">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="section-label">Let's Build Together</div>
+          <h2 class="section-heading">Start Your<br /><em>Project.</em></h2>
+          <p>Tell us about your vision. Our team will respond within 24 hours to arrange an initial consultation —
+            completely obligation-free.</p>
+          <div class="contact-details">
+            <a href="tel:+6285887294624" class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"
+                    stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <span class="contact-val">+62 858 8729 4624</span>
+              </div>
+            </a>
+            <a href="/cdn-cgi/l/email-protection#98fbf9f6fcfdf4f9f3f7f6ebeceaedf3ebf1d8fff5f9f1f4b6fbf7f5"
+              class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-val"><span class="__cf_email__"
+                    data-cfemail="1073717e74757c717b7f7e636462657b637950777d71797c3e737f7d">[email&#160;protected]</span></span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                    stroke="currentColor" stroke-width="1.5" />
+                  <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Address</span>
+                <span class="contact-val">Graha Segovia, Tangerang</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal delay-1">
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="fname" name="name" required placeholder=" " />
+                <label for="fname">Full Name *</label>
+                <span class="form-error">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="fcompany" name="company" placeholder=" " />
+                <label for="fcompany">Company</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" id="femail" name="email" required placeholder=" " />
+                <label for="femail">Email Address *</label>
+                <span class="form-error">Please enter a valid email.</span>
+              </div>
+              <div class="form-group">
+                <select id="fservice" name="service" required>
+                  <option value="" disabled selected></option>
+                  <option value="contractor">Contractor</option>
+                  <option value="mep">MEP Systems</option>
+                  <option value="interior">Interior & Exterior</option>
+                  <option value="architecture">Architecture Design</option>
+                  <option value="full">Full Design & Build</option>
+                </select>
+                <label for="fservice" class="select-label">Service Interest *</label>
+                <span class="form-error">Please select a service.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <select id="fbudget" name="budget">
+                <option value="" disabled selected></option>
+                <option value="under500">Under Rp 500 Juta</option>
+                <option value="500-1b">Rp 500 Juta – 1 Miliar</option>
+                <option value="1b-3b">Rp 1 – 3 Miliar</option>
+                <option value="3b-10b">Rp 3 – 10 Miliar</option>
+                <option value="over10b">Above Rp 10 Miliar</option>
+              </select>
+              <label for="fbudget" class="select-label">Budget Range</label>
+            </div>
+            <div class="form-group">
+              <textarea id="fmessage" name="message" rows="4" required placeholder=" "></textarea>
+              <label for="fmessage">Your Message *</label>
+              <span class="form-error">Please describe your project.</span>
+            </div>
+            <button type="submit" class="btn-primary btn-full">
+              <span>Send Enquiry</span>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="var(--gold)" stroke-width="1.5" />
+                <path d="M8 12l3 3 5-5" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>Thank you. We'll be in touch within 24 hours.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo footer-logo">
+            <span class="logo-mark">C</span>
+            <span class="logo-text">CANDELA</span>
+          </a>
+          <p>Building Quality, Building Life.<br />Tangerang, Indonesia — Est. 2021.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#commitment">HSE Commitment</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Contractor</a></li>
+            <li><a href="#services">MEP Systems</a></li>
+            <li><a href="#services">Interior & Exterior</a></li>
+            <li><a href="#services">Architecture Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h5>Get In Touch</h5>
+          <p><a href="tel:+6285887294624">+62 858 8729 4624</a></p>
+          <p><a href="/cdn-cgi/l/email-protection#2340424d47464f42484c4d5057515648504a63444e424a4f0d404c4e"><span
+                class="__cf_email__"
+                data-cfemail="1a797b747e7f767b717574696e686f7169735a7d777b737634797577">[email&#160;protected]</span></a>
+          </p>
+          <p>Graha Segovia, Tangerang</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Candela Konstruksi. All Rights Reserved.</p>
+        <p class="footer-craft">Crafted with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════ MODAL -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Project Image Viewer">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div class="modal-project-info">
+          <span class="modal-project-cat" id="modalProjectCat"></span>
+          <span class="modal-project-name" id="modalProjectName"></span>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-img-wrap">
+        <img id="modalImg" src="" alt="" />
+      </div>
+      <div class="modal-bottom">
+        <div class="modal-caption" id="modalCaption"></div>
+        <div class="modal-dots" id="modalDots"></div>
+        <div class="modal-counter" id="modalCounter"></div>
+      </div>
+      <div class="modal-nav">
+        <button class="modal-prev" id="modalPrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <button class="modal-next" id="modalNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
