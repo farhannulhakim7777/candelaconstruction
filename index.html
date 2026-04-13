@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Candela Construction - Building Quality, Building Life</title>
+  <title>Candela Construction - Membangun Kualitas, Membangun Kehidupan</title>
   <meta name="description"
-    content="Candela Construction — Premier Design & Build firm. Contractor, MEP Systems, Interior & Exterior, Architecture Design. Based in Tangerang, Indonesia." />
+    content="Candela Construction - firma Design & Build unggulan. Kontraktor, Sistem MEP, Interior & Eksterior, Desain Arsitektur. Berbasis di Tangerang, Indonesia." />
+  <link rel="icon" href="/logo/candela.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/logo/candela.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -17,147 +19,143 @@
 
 <body>
 
-  <!-- ═══════════════════════════════════════════ NAVIGATION -->
+ 
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <img src="/logo/candela.png" alt="Candela Logo" class="logo-img">
+        <img src="/logo/candela.png" alt="Logo Candela" class="logo-img">
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#services">Layanan</a></li>
         <li><a href="#commitment">HSE</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact" class="nav-cta">Collaborate</a></li>
+        <li><a href="#portfolio">Portofolio</a></li>
+        <li><a href="#contact" class="nav-cta">Kolaborasi</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Buka atau tutup menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ═══ MOBILE MENU — body-level, never clipped by any parent ═══ -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#services">Layanan</a></li>
       <li><a href="#commitment">HSE</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact" class="mob-cta">Collaborate</a></li>
+      <li><a href="#portfolio">Portofolio</a></li>
+      <li><a href="#contact" class="mob-cta">Kolaborasi</a></li>
     </ul>
   </div>
 
-  <!-- ═══════════════════════════════════════════ HERO -->
+ 
   <section id="hero">
-    <div class="hero-slider" id="heroSlider">
-      <div class="hero-slide active"
-        style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1800&q=80')"></div>
-      <div class="hero-slide"
-        style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80')"></div>
-      <div class="hero-slide"
-        style="background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1800&q=80')"></div>
-      <div class="hero-slide"
-        style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1800&q=80')"></div>
-    </div>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-inner">
+        <div class="hero-grid">
+          <div class="hero-panel hero-panel--copy hero-card">
+            <div class="hero-eyebrow">CANDELA CONSTRUCTION | DESIGN & BUILD | TANGERANG, INDONESIA</div>
 
+            <h1 class="hero-headline">
+              <span class="line-wrap"><em>BUILD </em>FOR</span>
+              <span class="line-wrap">QUALITY</span>
+              <span class="line-wrap"><em>BUILD </em>FOR</span>
+              <span class="line-wrap">LIFE.</span>
+            </h1>
 
-        <h1 class="hero-headline">
-          <span class="line-wrap"><em>Building</em></span>
-          <span class="line-wrap">Quality,</span>
-          <span class="line-wrap"><em>Building</em></span>
-          <span class="line-wrap">Life.</span>
-        </h1>
+            <div class="hero-actions hero-actions--grid">
+              <a href="#contact" class="btn-primary">Konsultasikan Proyek</a>
+              <a href="#portfolio" class="btn-ghost">Lihat Portofolio</a>
+              <a href="#services" class="hero-link">Lihat layanan →</a>
+              <a href="#contact" class="hero-link hero-link--gold">Mulai konsultasi</a>
+            </div>
+          </div>
 
-        <div class="hero-eyebrow">Est. 2021 — Tangerang, Indonesia</div>
-        <p class="hero-sub">Design & Build excellence — from foundation to finish.</p>
-        
-
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn-primary">View Our Work</a>
-          <a href="#contact" class="btn-ghost">Start a Project</a>
+          <aside class="hero-panel hero-panel--media hero-card" aria-label="Galeri proyek Candela">
+            <div class="hero-media">
+              <div class="hero-media-slide active">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" alt="Proyek konstruksi - struktur" loading="eager" />
+              </div>
+              <div class="hero-media-slide">
+                <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80" alt="Proyek arsitektur - fasad modern" loading="lazy" />
+              </div>
+              <div class="hero-media-slide">
+                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80" alt="Bangunan komersial - detail urban" loading="lazy" />
+              </div>
+              <div class="hero-media-slide">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80" alt="Pengerjaan lapangan - alat berat" loading="lazy" />
+              </div>
+            </div>
+            <div class="hero-media-meta">
+              <span class="hero-media-label">Featured Works</span>
+              <div class="hero-media-dots" id="heroMediaDots" aria-hidden="true"></div>
+            </div>
+          </aside>
         </div>
 
       </div>
     </div>
-    <!-- <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div> -->
-    <div class="hero-slide-counter">
-      <span id="currentSlide">01</span>
-      <div class="counter-track">
-        <div class="counter-fill" id="counterFill"></div>
-      </div>
-      <span id="totalSlides">04</span>
-    </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ TICKER -->
+ 
   <div class="ticker-bar">
     <div class="ticker-track">
-      <span>Contractor</span><span class="sep">✦</span>
-      <span>MEP Systems</span><span class="sep">✦</span>
-      <span>Interior & Exterior</span><span class="sep">✦</span>
-      <span>Architecture Design</span><span class="sep">✦</span>
-      <span>Zero Accident Policy</span><span class="sep">✦</span>
-      <span>SNI Standards</span><span class="sep">✦</span>
-      <span>Design & Build</span><span class="sep">✦</span>
-      <span>Est. 2021</span><span class="sep">✦</span>
+      <span>Kontraktor</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Sistem MEP</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Interior & Eksterior</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Desain Arsitektur</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Kebijakan Nol Kecelakaan</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Standar SNI</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Design & Build</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Berdiri 2021</span><span class="sep" aria-hidden="true">&#10022;</span>
       <!-- duplicate for seamless loop -->
-      <span>Contractor</span><span class="sep">✦</span>
-      <span>MEP Systems</span><span class="sep">✦</span>
-      <span>Interior & Exterior</span><span class="sep">✦</span>
-      <span>Architecture Design</span><span class="sep">✦</span>
-      <span>Zero Accident Policy</span><span class="sep">✦</span>
-      <span>SNI Standards</span><span class="sep">✦</span>
-      <span>Design & Build</span><span class="sep">✦</span>
-      <span>Est. 2021</span><span class="sep">✦</span>
+      <span>Kontraktor</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Sistem MEP</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Interior & Eksterior</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Desain Arsitektur</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Kebijakan Nol Kecelakaan</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Standar SNI</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Design & Build</span><span class="sep" aria-hidden="true">&#10022;</span>
+      <span>Berdiri 2021</span><span class="sep" aria-hidden="true">&#10022;</span>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════ ABOUT -->
+
   <section id="about" class="section">
     <div class="container">
       <div class="about-grid">
         <div class="about-media reveal">
           <div class="about-img-main">
             <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-              alt="Candela Construction team at work" loading="lazy" />
+              alt="Tim Candela Construction sedang bekerja" loading="lazy" />
           </div>
           <div class="about-img-accent">
             <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
-              alt="Precision engineering" loading="lazy" />
+              alt="Pengerjaan dengan presisi tinggi" loading="lazy" />
             <div class="stat-badge">
               <strong>3+</strong>
-              <span>Years of Excellence</span>
+              <span>Tahun Keunggulan</span>
             </div>
           </div>
         </div>
         <div class="about-text reveal delay-1">
-          <div class="section-label">About Candela</div>
-          <h2 class="section-heading">Where Precision<br /><em>Meets Purpose.</em></h2>
-          <p class="about-lead">Founded in 2021, Candela Construction emerged with a singular conviction: that great
-            spaces are not merely built - they are <em>crafted</em>.</p>
-          <p>From our base in Tangerang, we have grown into a full-spectrum Design & Build firm that unites
-            architectural vision with engineering discipline. Every project — residential or commercial - is approached
-            with the same rigorous attention to material, method, and meaning.</p>
-          <p>We don't just construct buildings. We create environments that endure, inspire, and enrich the lives of
-            those who inhabit them. That is the Candela standard.</p>
+          <div class="section-label">Tentang Candela</div>
+          <h2 class="section-heading">Saat Presisi<br /><em>Bertemu Tujuan.</em></h2>
+          <p class="about-lead">Didirikan pada tahun 2021, Candela Construction lahir dari satu keyakinan utama: ruang yang hebat tidak sekadar dibangun - tetapi dirancang dengan <em>ketelitian</em>.</p>
+          <p>Dari basis kami di Tangerang, kami berkembang menjadi firma Design & Build yang menyeluruh, memadukan visi arsitektur dengan disiplin rekayasa. Setiap proyek - baik hunian maupun komersial - kami kerjakan dengan perhatian yang sama ketatnya terhadap material, metode, dan makna.</p>
+          <p>Kami tidak hanya membangun bangunan. Kami menciptakan lingkungan yang tahan lama, menginspirasi, dan memperkaya kehidupan orang-orang di dalamnya. Itulah standar Candela.</p>
           <div class="about-stats">
             <div class="stat">
               <strong>50+</strong>
-              <span>Projects Completed</span>
+              <span>Proyek Selesai</span>
             </div>
             <div class="stat">
               <strong>100%</strong>
-              <span>SNI Compliant</span>
+              <span>Sesuai SNI</span>
             </div>
             <div class="stat">
               <strong>0</strong>
-              <span>Accident Record</span>
+              <span>Catatan Kecelakaan</span>
             </div>
           </div>
         </div>
@@ -165,12 +163,12 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ SERVICES -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SERVICES -->
   <section id="services" class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label light">What We Do</div>
-        <h2 class="section-heading light">Our Core<br /><em>Services.</em></h2>
+        <div class="section-label light">Yang Kami Kerjakan</div>
+        <h2 class="section-heading light">Layanan Inti<br /><em>Kami.</em></h2>
       </div>
       <div class="services-grid">
         <div class="service-card reveal" data-index="01">
@@ -181,20 +179,18 @@
             </svg>
           </div>
           <div class="card-num">01</div>
-          <h3>Contractor</h3>
-          <p class="card-brief">Full-cycle construction management from groundbreaking to handover.</p>
+          <h3>Kontraktor</h3>
+          <p class="card-brief">Manajemen konstruksi menyeluruh dari awal pekerjaan hingga serah terima.</p>
           <div class="card-detail">
-            <p>We deliver end-to-end construction services — managing timelines, subcontractors, materials, and quality
-              control. Our experienced project managers ensure every build adheres to specification, budget, and
-              schedule without compromise.</p>
+            <p>Kami menghadirkan layanan konstruksi end-to-end - mengelola jadwal, subkontraktor, material, dan kontrol mutu. Manajer proyek kami yang berpengalaman memastikan setiap pembangunan sesuai spesifikasi, anggaran, dan jadwal tanpa kompromi.</p>
             <ul>
-              <li>Residential & Commercial Build</li>
-              <li>Project Management</li>
-              <li>Site Supervision</li>
-              <li>Subcontractor Coordination</li>
+              <li>Pembangunan Hunian & Komersial</li>
+              <li>Manajemen Proyek</li>
+              <li>Pengawasan Lapangan</li>
+              <li>Koordinasi Subkontraktor</li>
             </ul>
           </div>
-          <div class="card-arrow">→</div>
+          <div class="card-arrow">â†’</div>
         </div>
 
         <div class="service-card reveal delay-1" data-index="02">
@@ -207,20 +203,18 @@
             </svg>
           </div>
           <div class="card-num">02</div>
-          <h3>MEP Systems</h3>
-          <p class="card-brief">Integrated Mechanical, Electrical & Plumbing engineering solutions.</p>
+          <h3>Sistem MEP</h3>
+          <p class="card-brief">Solusi rekayasa Mechanical, Electrical & Plumbing yang terintegrasi.</p>
           <div class="card-detail">
-            <p>Our MEP engineers design and install complex building systems that work invisibly — ensuring comfort,
-              safety, and efficiency. We integrate all disciplines into a seamless, code-compliant whole that performs
-              for decades.</p>
+            <p>Engineer MEP kami merancang dan memasang sistem bangunan yang kompleks namun bekerja secara mulus - memastikan kenyamanan, keamanan, dan efisiensi. Kami mengintegrasikan seluruh disiplin menjadi satu sistem utuh yang patuh standar dan andal untuk jangka panjang.</p>
             <ul>
-              <li>HVAC & Ventilation Design</li>
-              <li>Electrical System Integration</li>
-              <li>Plumbing & Drainage</li>
-              <li>Fire Protection Systems</li>
+              <li>Desain HVAC & Ventilasi</li>
+              <li>Integrasi Sistem Kelistrikan</li>
+              <li>Plumbing & Drainase</li>
+              <li>Sistem Proteksi Kebakaran</li>
             </ul>
           </div>
-          <div class="card-arrow">→</div>
+          <div class="card-arrow">â†’</div>
         </div>
 
         <div class="service-card reveal delay-2" data-index="03">
@@ -231,20 +225,18 @@
             </svg>
           </div>
           <div class="card-num">03</div>
-          <h3>Interior & Exterior</h3>
-          <p class="card-brief">Considered design for every surface — inside and out.</p>
+          <h3>Interior & Eksterior</h3>
+          <p class="card-brief">Desain yang matang untuk setiap detail - di dalam maupun di luar ruang.</p>
           <div class="card-detail">
-            <p>From bespoke cabinetry to façade cladding, our design team crafts spaces with a strong material language
-              and spatial logic. We believe the boundary between interior and exterior should be a conversation, not a
-              divide.</p>
+            <p>Dari kabinet custom hingga pelapis fasad, tim desain kami membentuk ruang dengan bahasa material yang kuat dan logika spasial yang jelas. Kami percaya batas antara interior dan eksterior seharusnya menjadi dialog, bukan pemisah.</p>
             <ul>
-              <li>Interior Space Planning</li>
-              <li>Material & Finish Specification</li>
-              <li>Façade & Landscape Design</li>
-              <li>Furniture & Fixture Coordination</li>
+              <li>Perencanaan Ruang Interior</li>
+              <li>Spesifikasi Material & Finishing</li>
+              <li>Desain Fasad & Lanskap</li>
+              <li>Koordinasi Furnitur & Fixture</li>
             </ul>
           </div>
-          <div class="card-arrow">→</div>
+          <div class="card-arrow">â†’</div>
         </div>
 
         <div class="service-card reveal delay-3" data-index="04">
@@ -256,39 +248,33 @@
             </svg>
           </div>
           <div class="card-num">04</div>
-          <h3>Architecture Design</h3>
-          <p class="card-brief">Purposeful architectural concepts rooted in context and craft.</p>
+          <h3>Desain Arsitektur</h3>
+          <p class="card-brief">Konsep arsitektur yang bermakna, berakar pada konteks dan ketelitian desain.</p>
           <div class="card-detail">
-            <p>Our architects develop considered designs that respond to site, climate, and human behaviour. We produce
-              complete documentation sets — from concept sketches through to construction drawings — with precision and
-              care.</p>
+            <p>Arsitek kami mengembangkan desain yang responsif terhadap tapak, iklim, dan perilaku pengguna. Kami menyiapkan dokumen yang lengkap - dari sketsa konsep hingga gambar kerja - dengan presisi dan perhatian tinggi.</p>
             <ul>
-              <li>Conceptual & Schematic Design</li>
-              <li>Design Development</li>
-              <li>Construction Documentation</li>
-              <li>Permit & Regulatory Assistance</li>
+              <li>Desain Konseptual & Skematik</li>
+              <li>Pengembangan Desain</li>
+              <li>Dokumentasi Konstruksi</li>
+              <li>Bantuan Perizinan & Regulasi</li>
             </ul>
           </div>
-          <div class="card-arrow">→</div>
+          <div class="card-arrow">â†’</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ COMMITMENT / HSE -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• COMMITMENT / HSE -->
   <section id="commitment" class="section">
     <div class="container">
       <div class="commitment-inner">
         <div class="commitment-text reveal">
-          <div class="section-label">Safety & Standards</div>
-          <h2 class="section-heading">Our Commitment<br /><em>to Zero.</em></h2>
-          <p>Health, Safety, and Environment is not a compliance checkbox at Candela — it is a core value embedded in
-            every action on every site. Our Zero Accident Policy means that no deadline or budget pressure ever
-            overrides the safety of our people.</p>
-          <p>All Candela projects are designed and executed in full conformance with <strong>SNI (Standar Nasional
-              Indonesia)</strong> standards, ensuring structural integrity, fire resistance, and long-term durability
-            that protects occupants and investment alike.</p>
-          <a href="#contact" class="btn-primary">Discuss Your Project</a>
+          <div class="section-label">Keselamatan & Standar</div>
+          <h2 class="section-heading">Komitmen Kami<br /><em>Menuju Nol.</em></h2>
+          <p>Kesehatan, Keselamatan, dan Lingkungan bukan sekadar formalitas kepatuhan di Candela - ini adalah nilai inti yang tertanam dalam setiap tindakan di setiap proyek. Kebijakan Nol Kecelakaan kami berarti tidak ada tenggat waktu atau tekanan anggaran yang boleh mengorbankan keselamatan tim kami.</p>
+          <p>Seluruh proyek Candela dirancang dan dilaksanakan sesuai <strong>SNI (Standar Nasional Indonesia)</strong>, untuk memastikan integritas struktur, ketahanan terhadap api, dan daya tahan jangka panjang yang melindungi pengguna maupun investasi.</p>
+          <a href="#contact" class="btn-primary">Diskusikan Proyek Anda</a>
         </div>
         <div class="commitment-pillars reveal delay-1">
           <div class="pillar">
@@ -299,8 +285,8 @@
                   stroke-linejoin="round" />
               </svg>
             </div>
-            <h4>Zero Accident Policy</h4>
-            <p>Mandatory safety inductions, PPE enforcement, and daily toolbox talks across all active sites.</p>
+            <h4>Kebijakan Nol Kecelakaan</h4>
+            <p>Induksi keselamatan wajib, penggunaan APD yang disiplin, dan toolbox meeting harian di seluruh proyek aktif.</p>
           </div>
           <div class="pillar">
             <div class="pillar-icon">
@@ -309,8 +295,8 @@
                   stroke-linejoin="round" />
               </svg>
             </div>
-            <h4>SNI Standards</h4>
-            <p>Full compliance with Standar Nasional Indonesia for structural, electrical, and fire protection systems.
+            <h4>Standar SNI</h4>
+            <p>Kepatuhan penuh terhadap Standar Nasional Indonesia untuk sistem struktur, kelistrikan, dan proteksi kebakaran.
             </p>
           </div>
           <div class="pillar">
@@ -321,8 +307,8 @@
                 <circle cx="28" cy="32" r="3" stroke="var(--gold)" stroke-width="2" />
               </svg>
             </div>
-            <h4>Quality Assurance</h4>
-            <p>Multi-stage inspection protocols and third-party testing at critical construction milestones.</p>
+            <h4>Jaminan Mutu</h4>
+            <p>Protokol inspeksi bertahap dan pengujian pihak ketiga pada tahapan konstruksi yang kritis.</p>
           </div>
           <div class="pillar">
             <div class="pillar-icon">
@@ -332,8 +318,8 @@
                 <path d="M36 12l4-4M36 12h6M36 12v6" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" />
               </svg>
             </div>
-            <h4>Environmental Care</h4>
-            <p>Responsible waste management, dust suppression, and minimal-disruption site practices.</p>
+            <h4>Kepedulian Lingkungan</h4>
+            <p>Pengelolaan limbah yang bertanggung jawab, pengendalian debu, dan praktik kerja yang meminimalkan gangguan.</p>
           </div>
         </div>
       </div>
@@ -341,39 +327,39 @@
     <div class="commitment-bg-text" aria-hidden="true">ZERO</div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ PORTFOLIO -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PORTFOLIO -->
   <section id="portfolio" class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label light">Our Work</div>
-        <h2 class="section-heading light">Selected<br /><em>Projects.</em></h2>
+        <div class="section-label light">Karya Kami</div>
+        <h2 class="section-heading light">Proyek Pilihan<br /><em>Kami.</em></h2>
       </div>
       <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="residential">Residential</button>
-        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+        <button class="filter-btn" data-filter="residential">Hunian</button>
+        <button class="filter-btn" data-filter="commercial">Komersial</button>
       </div>
       <div class="portfolio-grid" id="portfolioGrid">
 
-        <!-- ── Origin House ─────────────────────────── -->
+        <!-- â”€â”€ Origin House â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal" data-category="residential" data-project="Origin House"
-          data-project-cat="Residential"
-          data-project-desc="A contemplative family residence that draws on vernacular form and contemporary detailing."
+          data-project-cat="Hunian"
+          data-project-desc="Hunian keluarga yang tenang dengan inspirasi bentuk vernakular dan detail kontemporer."
           data-images='[
-            {"src":"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85","caption":"Origin House — Façade & Entry"},
-            {"src":"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85","caption":"Origin House — Living Area"},
-            {"src":"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85","caption":"Origin House — Master Suite"}
+            {"src":"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85","caption":"Origin House - Fasad & Area Masuk"},
+            {"src":"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85","caption":"Origin House - Area Ruang Tamu"},
+            {"src":"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85","caption":"Origin House - Kamar Utama"}
           ]'>
           <div class="portfolio-img-wrap">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Origin House"
               loading="lazy" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">Residential</span>
+                <span class="portfolio-cat">Hunian</span>
                 <h3>Origin House</h3>
-                <p>A contemplative family residence that draws on vernacular form and contemporary detailing.</p>
+                <p>Hunian keluarga yang tenang dengan inspirasi bentuk vernakular dan detail kontemporer.</p>
               </div>
-              <button class="portfolio-zoom" aria-label="View Origin House">
+              <button class="portfolio-zoom" aria-label="Lihat Origin House">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -384,24 +370,24 @@
           </div>
         </div>
 
-        <!-- ── MT House ─────────────────────────────── -->
+        <!-- â”€â”€ MT House â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal delay-1" data-category="residential" data-project="MT House"
-          data-project-cat="Residential"
-          data-project-desc="A bold geometric form softened by warm material choices and lush landscaping." data-images='[
-            {"src":"https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85","caption":"MT House — Street Elevation"},
-            {"src":"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=85","caption":"MT House — Interior Courtyard"},
-            {"src":"https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=85","caption":"MT House — Kitchen & Dining"}
+          data-project-cat="Hunian"
+          data-project-desc="Bentuk geometris yang tegas, dilembutkan oleh pilihan material hangat dan lanskap hijau." data-images='[
+            {"src":"https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85","caption":"MT House - Tampak Depan"},
+            {"src":"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=85","caption":"MT House - Courtyard Interior"},
+            {"src":"https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=85","caption":"MT House - Dapur & Ruang Makan"}
           ]'>
           <div class="portfolio-img-wrap">
             <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt="MT House"
               loading="lazy" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">Residential</span>
+                <span class="portfolio-cat">Hunian</span>
                 <h3>MT House</h3>
-                <p>A bold geometric form softened by warm material choices and lush landscaping.</p>
+                <p>Bentuk geometris yang tegas, dilembutkan oleh pilihan material hangat dan lanskap hijau.</p>
               </div>
-              <button class="portfolio-zoom" aria-label="View MT House">
+              <button class="portfolio-zoom" aria-label="Lihat MT House">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -412,24 +398,24 @@
           </div>
         </div>
 
-        <!-- ── Harlow Residence ─────────────────────── -->
+        <!-- â”€â”€ Harlow Residence â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal delay-2 tall" data-category="residential" data-project="Harlow Residence"
-          data-project-cat="Residential"
-          data-project-desc="Two-storey contemporary home with seamless indoor-outdoor connectivity." data-images='[
-            {"src":"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=85","caption":"Harlow Residence — Rear Garden View"},
-            {"src":"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=85","caption":"Harlow Residence — Pool Deck"},
-            {"src":"https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=85","caption":"Harlow Residence — Upper Terrace"}
+          data-project-cat="Hunian"
+          data-project-desc="Rumah kontemporer dua lantai dengan koneksi indoor-outdoor yang menyatu." data-images='[
+            {"src":"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=85","caption":"Harlow Residence - Tampak Taman Belakang"},
+            {"src":"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=85","caption":"Harlow Residence - Dek Kolam"},
+            {"src":"https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=85","caption":"Harlow Residence - Teras Atas"}
           ]'>
           <div class="portfolio-img-wrap">
             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Harlow Residence"
               loading="lazy" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">Residential</span>
+                <span class="portfolio-cat">Hunian</span>
                 <h3>Harlow Residence</h3>
-                <p>Two-storey contemporary home with seamless indoor-outdoor connectivity.</p>
+                <p>Rumah kontemporer dua lantai dengan koneksi indoor-outdoor yang menyatu.</p>
               </div>
-              <button class="portfolio-zoom" aria-label="View Harlow Residence">
+              <button class="portfolio-zoom" aria-label="Lihat Harlow Residence">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -440,25 +426,25 @@
           </div>
         </div>
 
-        <!-- ── Bube Store ───────────────────────────── -->
+        <!-- â”€â”€ Bube Store â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal" data-category="commercial" data-project="Bube Store"
-          data-project-cat="Commercial Specialty"
-          data-project-desc="A retail concept space prioritising experiential flow and brand identity through architecture."
+          data-project-cat="Komersial Khusus"
+          data-project-desc="Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur."
           data-images='[
-            {"src":"https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=85","caption":"Bube Store — Main Shopfront"},
-            {"src":"https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&q=85","caption":"Bube Store — Interior Display"},
-            {"src":"https://images.unsplash.com/photo-1604014056022-b76f67a65cbb?w=1200&q=85","caption":"Bube Store — Fitting & Counter Area"}
+            {"src":"https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=85","caption":"Bube Store - Tampak Depan Toko"},
+            {"src":"https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&q=85","caption":"Bube Store - Area Display Interior"},
+            {"src":"https://images.unsplash.com/photo-1604014056022-b76f67a65cbb?w=1200&q=85","caption":"Bube Store - Area Fitting & Kasir"}
           ]'>
           <div class="portfolio-img-wrap">
             <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Bube Store"
               loading="lazy" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">Commercial Specialty</span>
+                <span class="portfolio-cat">Komersial Khusus</span>
                 <h3>Bube Store</h3>
-                <p>A retail concept space prioritising experiential flow and brand identity through architecture.</p>
+                <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p>
               </div>
-              <button class="portfolio-zoom" aria-label="View Bube Store">
+              <button class="portfolio-zoom" aria-label="Lihat Bube Store">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -469,25 +455,25 @@
           </div>
         </div>
 
-        <!-- ── Neph Store ───────────────────────────── -->
+        <!-- â”€â”€ Neph Store â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal delay-1 wide" data-category="commercial" data-project="Neph Store"
-          data-project-cat="Commercial Specialty"
-          data-project-desc="F&B specialty fitout with custom joinery, curated lighting design and full MEP integration."
+          data-project-cat="Komersial Khusus"
+          data-project-desc="Fitout F&B dengan joinery custom, rancangan pencahayaan terkurasi, dan integrasi MEP penuh."
           data-images='[
-            {"src":"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=85","caption":"Neph Store — Dining Floor"},
-            {"src":"https://images.unsplash.com/photo-1560053608-13721b18f4bd?w=1200&q=85","caption":"Neph Store — Bar & Counter"},
-            {"src":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=85","caption":"Neph Store — Private Dining"}
+            {"src":"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=85","caption":"Neph Store - Area Makan"},
+            {"src":"https://images.unsplash.com/photo-1560053608-13721b18f4bd?w=1200&q=85","caption":"Neph Store - Bar & Counter"},
+            {"src":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=85","caption":"Neph Store - Private Dining"}
           ]'>
           <div class="portfolio-img-wrap">
             <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80" alt="Neph Store"
               loading="lazy" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">Commercial Specialty</span>
+                <span class="portfolio-cat">Komersial Khusus</span>
                 <h3>Neph Store</h3>
-                <p>F&B specialty fitout with custom joinery, curated lighting design and full MEP integration.</p>
+                <p>Fitout F&B dengan joinery custom, rancangan pencahayaan terkurasi, dan integrasi MEP penuh.</p>
               </div>
-              <button class="portfolio-zoom" aria-label="View Neph Store">
+              <button class="portfolio-zoom" aria-label="Lihat Neph Store">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -498,25 +484,25 @@
           </div>
         </div>
 
-        <!-- ── Verdant Villa ────────────────────────── -->
+        <!-- â”€â”€ Verdant Villa â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal delay-2" data-category="residential" data-project="Verdant Villa"
-          data-project-cat="Residential"
-          data-project-desc="A hillside retreat defined by cross-ventilation, natural stone, and cantilevered terraces."
+          data-project-cat="Hunian"
+          data-project-desc="Retret di lereng bukit yang didefinisikan oleh ventilasi silang, batu alam, dan teras kantilever."
           data-images='[
-            {"src":"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=85","caption":"Verdant Villa — Approach & Entry"},
-            {"src":"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=85","caption":"Verdant Villa — Pool & Terrace"},
-            {"src":"https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=1200&q=85","caption":"Verdant Villa — Open Living"}
+            {"src":"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=85","caption":"Verdant Villa - Area Pendekatan & Masuk"},
+            {"src":"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=85","caption":"Verdant Villa - Kolam & Teras"},
+            {"src":"https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=1200&q=85","caption":"Verdant Villa - Ruang Keluarga Terbuka"}
           ]'>
           <div class="portfolio-img-wrap">
             <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Verdant Villa"
               loading="lazy" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">Residential</span>
+                <span class="portfolio-cat">Hunian</span>
                 <h3>Verdant Villa</h3>
-                <p>A hillside retreat defined by cross-ventilation, natural stone, and cantilevered terraces.</p>
+                <p>Retret di lereng bukit yang didefinisikan oleh ventilasi silang, batu alam, dan teras kantilever.</p>
               </div>
-              <button class="portfolio-zoom" aria-label="View Verdant Villa">
+              <button class="portfolio-zoom" aria-label="Lihat Verdant Villa">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -531,15 +517,14 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ CONTACT -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• CONTACT -->
   <section id="contact" class="section">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info reveal">
-          <div class="section-label">Let's Build Together</div>
-          <h2 class="section-heading">Start Your<br /><em>Project.</em></h2>
-          <p>Tell us about your vision. Our team will respond within 24 hours to arrange an initial consultation —
-            completely obligation-free.</p>
+          <div class="section-label">Mari Bangun Bersama</div>
+          <h2 class="section-heading">Mulai<br /><em>Proyek Anda.</em></h2>
+          <p>Ceritakan visi Anda kepada kami. Tim kami akan merespons dalam 24 jam untuk menjadwalkan konsultasi awal tanpa kewajiban.</p>
           <div class="contact-details">
             <a href="tel:+6285887294624" class="contact-item">
               <div class="contact-icon">
@@ -549,7 +534,7 @@
                 </svg>
               </div>
               <div>
-                <span class="contact-label">Phone</span>
+                <span class="contact-label">Telepon</span>
                 <span class="contact-val">+62 858 8729 4624</span>
               </div>
             </a>
@@ -576,7 +561,7 @@
                 </svg>
               </div>
               <div>
-                <span class="contact-label">Address</span>
+                <span class="contact-label">Alamat</span>
                 <span class="contact-val">Graha Segovia, Tangerang</span>
               </div>
             </div>
@@ -587,51 +572,51 @@
             <div class="form-row">
               <div class="form-group">
                 <input type="text" id="fname" name="name" required placeholder=" " />
-                <label for="fname">Full Name *</label>
-                <span class="form-error">Please enter your name.</span>
+                <label for="fname">Nama Lengkap *</label>
+                <span class="form-error">Silakan masukkan nama Anda.</span>
               </div>
               <div class="form-group">
                 <input type="text" id="fcompany" name="company" placeholder=" " />
-                <label for="fcompany">Company</label>
+                <label for="fcompany">Perusahaan</label>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <input type="email" id="femail" name="email" required placeholder=" " />
-                <label for="femail">Email Address *</label>
-                <span class="form-error">Please enter a valid email.</span>
+                <label for="femail">Alamat Email *</label>
+                <span class="form-error">Silakan masukkan email yang valid.</span>
               </div>
               <div class="form-group">
                 <select id="fservice" name="service" required>
                   <option value="" disabled selected></option>
-                  <option value="contractor">Contractor</option>
-                  <option value="mep">MEP Systems</option>
-                  <option value="interior">Interior & Exterior</option>
-                  <option value="architecture">Architecture Design</option>
-                  <option value="full">Full Design & Build</option>
+                  <option value="contractor">Kontraktor</option>
+                  <option value="mep">Sistem MEP</option>
+                  <option value="interior">Interior & Eksterior</option>
+                  <option value="architecture">Desain Arsitektur</option>
+                  <option value="full">Design & Build Menyeluruh</option>
                 </select>
-                <label for="fservice" class="select-label">Service Interest *</label>
-                <span class="form-error">Please select a service.</span>
+                <label for="fservice" class="select-label">Layanan yang Diminati *</label>
+                <span class="form-error">Silakan pilih layanan.</span>
               </div>
             </div>
             <div class="form-group">
               <select id="fbudget" name="budget">
                 <option value="" disabled selected></option>
-                <option value="under500">Under Rp 500 Juta</option>
-                <option value="500-1b">Rp 500 Juta – 1 Miliar</option>
-                <option value="1b-3b">Rp 1 – 3 Miliar</option>
-                <option value="3b-10b">Rp 3 – 10 Miliar</option>
-                <option value="over10b">Above Rp 10 Miliar</option>
+                <option value="under500">Di bawah Rp 500 Juta</option>
+                <option value="500-1b">Rp 500 Juta - 1 Miliar</option>
+                <option value="1b-3b">Rp 1 - 3 Miliar</option>
+                <option value="3b-10b">Rp 3 - 10 Miliar</option>
+                <option value="over10b">Di atas Rp 10 Miliar</option>
               </select>
-              <label for="fbudget" class="select-label">Budget Range</label>
+              <label for="fbudget" class="select-label">Rentang Anggaran</label>
             </div>
             <div class="form-group">
               <textarea id="fmessage" name="message" rows="4" required placeholder=" "></textarea>
-              <label for="fmessage">Your Message *</label>
-              <span class="form-error">Please describe your project.</span>
+              <label for="fmessage">Pesan Anda *</label>
+              <span class="form-error">Silakan ceritakan proyek Anda.</span>
             </div>
             <button type="submit" class="btn-primary btn-full">
-              <span>Send Enquiry</span>
+              <span>Kirim Enquiry</span>
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -643,7 +628,7 @@
                 <path d="M8 12l3 3 5-5" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
-              <p>Thank you. We'll be in touch within 24 hours.</p>
+              <p>Terima kasih. Kami akan menghubungi Anda dalam 24 jam.</p>
             </div>
           </form>
         </div>
@@ -651,7 +636,7 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ FOOTER -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• FOOTER -->
   <footer id="footer">
     <div class="container">
       <div class="footer-top">
@@ -660,29 +645,29 @@
             <span class="logo-mark">C</span>
             <span class="logo-text">CANDELA</span>
           </a>
-          <p>Building Quality, Building Life.<br />Tangerang, Indonesia — Est. 2021.</p>
+          <p>Membangun Kualitas, Membangun Kehidupan.<br />Tangerang, Indonesia - Berdiri 2021.</p>
         </div>
         <div class="footer-links">
-          <h5>Navigate</h5>
+          <h5>Navigasi</h5>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#commitment">HSE Commitment</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#commitment">Komitmen HSE</a></li>
+            <li><a href="#portfolio">Portofolio</a></li>
+            <li><a href="#contact">Kontak</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h5>Services</h5>
+          <h5>Layanan</h5>
           <ul>
-            <li><a href="#services">Contractor</a></li>
-            <li><a href="#services">MEP Systems</a></li>
-            <li><a href="#services">Interior & Exterior</a></li>
-            <li><a href="#services">Architecture Design</a></li>
+            <li><a href="#services">Kontraktor</a></li>
+            <li><a href="#services">Sistem MEP</a></li>
+            <li><a href="#services">Interior & Eksterior</a></li>
+            <li><a href="#services">Desain Arsitektur</a></li>
           </ul>
         </div>
         <div class="footer-contact">
-          <h5>Get In Touch</h5>
+          <h5>Hubungi Kami</h5>
           <p><a href="tel:+6285887294624">+62 858 8729 4624</a></p>
           <p><a href="/cdn-cgi/l/email-protection#2340424d47464f42484c4d5057515648504a63444e424a4f0d404c4e"><span
                 class="__cf_email__"
@@ -692,21 +677,21 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Candela Konstruksi. All Rights Reserved.</p>
-        <p class="footer-craft">Crafted with precision.</p>
+        <p>&copy; 2025 Candela Konstruksi. Seluruh Hak Dilindungi.</p>
+        <p class="footer-craft">Dibuat dengan presisi.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════ MODAL -->
-  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Project Image Viewer">
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MODAL -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Penampil Gambar Proyek">
     <div class="modal-inner">
       <div class="modal-header">
         <div class="modal-project-info">
           <span class="modal-project-cat" id="modalProjectCat"></span>
           <span class="modal-project-name" id="modalProjectName"></span>
         </div>
-        <button class="modal-close" id="modalClose" aria-label="Close">
+        <button class="modal-close" id="modalClose" aria-label="Tutup">
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
@@ -721,13 +706,13 @@
         <div class="modal-counter" id="modalCounter"></div>
       </div>
       <div class="modal-nav">
-        <button class="modal-prev" id="modalPrev" aria-label="Previous">
+        <button class="modal-prev" id="modalPrev" aria-label="Sebelumnya">
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
         </button>
-        <button class="modal-next" id="modalNext" aria-label="Next">
+        <button class="modal-next" id="modalNext" aria-label="Berikutnya">
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -741,3 +726,13 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+

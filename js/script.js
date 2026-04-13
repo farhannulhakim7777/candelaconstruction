@@ -15,6 +15,9 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   const navbar     = qs('#navbar');
   const toggle     = qs('#navToggle');
   const mobileMenu = qs('#mobileMenu');
+  const desktopLinks = qsa('.nav-links a[href^="#"]');
+  const mobileLinks  = qsa('.mobile-menu a[href^="#"]');
+  const allNavLinks  = [...desktopLinks, ...mobileLinks];
 
   // ── Scroll: darken + blur on desktop
   window.addEventListener('scroll', () => {
@@ -28,7 +31,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     mobileMenu.classList.remove('open');
     mobileMenu.setAttribute('aria-hidden', 'true');
     toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   };
 
   const openMenu = () => {
@@ -36,7 +39,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     mobileMenu.classList.add('open');
     mobileMenu.setAttribute('aria-hidden', 'false');
     toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('menu-open');
   };
 
   // ── Hamburger toggle
@@ -73,7 +76,6 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
   // ── Active link highlight on scroll (desktop nav-links)
   const sections = qsa('section[id], footer[id]');
-  const links    = qsa('.nav-links a[href^="#"]');
 
   const updateActive = () => {
     const scrollMid = window.scrollY + window.innerHeight * 0.4;
@@ -81,7 +83,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     sections.forEach(sec => {
       if (sec.offsetTop <= scrollMid) active = sec.id;
     });
-    links.forEach(link => {
+    allNavLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === `#${active}`);
     });
   };
@@ -101,6 +103,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   let   timer        = null;
   const INTERVAL     = 5500;
 
+  if (!slides.length || !totalEl || !currentEl || !fillEl) return;
   totalEl.textContent = String(total).padStart(2, '0');
 
   const goTo = (n) => {
@@ -120,6 +123,51 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   autoPlay();
 
   // Pause on visibility change to avoid drift
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) clearInterval(timer);
+    else autoPlay();
+  });
+})();
+
+/* ─────────────────────────────── HERO MEDIA SLIDER (right card) */
+(function initHeroMediaSlider() {
+  const slides = qsa('.hero-media-slide');
+  const dotsWrap = qs('#heroMediaDots');
+  if (!slides.length || !dotsWrap) return;
+
+  let idx = 0;
+  let timer = null;
+  const INTERVAL = 4200;
+
+  const buildDots = () => {
+    dotsWrap.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'hero-media-dot' + (i === idx ? ' active' : '');
+      dotsWrap.appendChild(dot);
+    });
+  };
+
+  const updateDots = () => {
+    [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === idx));
+  };
+
+  const goTo = (n) => {
+    slides[idx].classList.remove('active');
+    idx = (n + slides.length) % slides.length;
+    slides[idx].classList.add('active');
+    updateDots();
+  };
+
+  const autoPlay = () => {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(idx + 1), INTERVAL);
+  };
+
+  buildDots();
+  goTo(0);
+  autoPlay();
+
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) clearInterval(timer);
     else autoPlay();
@@ -367,6 +415,8 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 (function initHeroParallax() {
   const overlay = qs('.hero-overlay');
   if (!overlay) return;
+  // If hero overlay is disabled via CSS, parallax is not needed.
+  if (getComputedStyle(overlay).display === 'none') return;
   let ticking = false;
 
   window.addEventListener('scroll', () => {
