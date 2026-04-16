@@ -344,56 +344,76 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 /* ─────────────────────────────── CONTACT FORM VALIDATION */
 (function initContactForm() {
-  const form       = qs('#contactForm');
-  const successEl  = qs('#formSuccess');
-  if (!form) return;
+  document.addEventListener('DOMContentLoaded', function () {
 
-  const validators = {
-    name:    v => v.trim().length >= 2,
-    email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
-    service: v => v !== '',
-    message: v => v.trim().length >= 10,
-  };
+    const form = document.querySelector('#contactForm');
+    if (!form) return;
 
-  const validate = (input) => {
-    const name = input.name;
-    if (!validators[name]) return true;   // optional fields
-    const ok = validators[name](input.value);
-    input.classList.toggle('error', !ok);
-    input.closest('.form-group').classList.toggle('show-error', !ok);
-    return ok;
-  };
+    const validators = {
+      name: v => v.trim().length >= 2,
+      email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+      service: v => v !== '',
+      message: v => v.trim().length >= 10,
+    };
 
-  // Live validation on blur
-  form.querySelectorAll('input, select, textarea').forEach(input => {
-    input.addEventListener('blur', () => validate(input));
-    input.addEventListener('input', () => {
-      if (input.classList.contains('error')) validate(input);
+    const validate = (input) => {
+      const name = input.name;
+      if (!validators[name]) return true;
+      const ok = validators[name](input.value);
+      input.classList.toggle('error', !ok);
+      input.closest('.form-group')?.classList.toggle('show-error', !ok);
+      return ok;
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // ⛔ WAJIB
+
+      let allValid = true;
+      form.querySelectorAll('input, select, textarea').forEach(function(input) {
+        if (!validate(input)) allValid = false;
+      });
+
+      if (!allValid) return;
+
+      const btn = form.querySelector('[type="submit"]');
+
+      if (btn) {
+        btn.disabled = true;
+        const span = btn.querySelector('span');
+        if (span) span.textContent = 'Redirecting...';
+      }
+
+      setTimeout(function () {
+
+        const getVal = (name) => {
+          const el = form.querySelector(`[name="${name}"]`);
+          return el ? el.value : '-';
+        };
+
+        const text =
+          "Halo Candela Construction 👋\n\n" +
+          "Nama: " + getVal('name') + "\n" +
+          "Perusahaan: " + getVal('company') + "\n" +
+          "Email: " + getVal('email') + "\n\n" +
+          "Layanan: " + getVal('service') + "\n" +
+          "Budget: " + getVal('budget') + "\n\n" +
+          "Pesan:\n" + getVal('message');
+
+        const url = "https://wa.me/628588729?text=" + encodeURIComponent(text);
+
+        window.open(url, '_blank');
+
+        form.reset();
+
+        if (btn) {
+          btn.disabled = false;
+          const span = btn.querySelector('span');
+          if (span) span.textContent = 'Kirim Enquiry';
+        }
+
+      }, 400);
     });
-  });
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    let allValid = true;
-    form.querySelectorAll('input, select, textarea').forEach(input => {
-      if (!validate(input)) allValid = false;
-    });
-
-    if (!allValid) return;
-
-    // Simulate submission
-    const btn = qs('[type="submit"]', form);
-    btn.disabled = true;
-    btn.querySelector('span').textContent = 'Sending…';
-
-    setTimeout(() => {
-      form.reset();
-      btn.disabled = false;
-      btn.querySelector('span').textContent = 'Send Enquiry';
-      successEl.classList.add('visible');
-      setTimeout(() => successEl.classList.remove('visible'), 6000);
-    }, 1200);
   });
 })();
 
