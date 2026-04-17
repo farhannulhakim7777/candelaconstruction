@@ -399,7 +399,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
           "Budget: " + getVal('budget') + "\n\n" +
           "Pesan:\n" + getVal('message');
 
-        const url = "https://wa.me/628588729?text=" + encodeURIComponent(text);
+        const url = "https://wa.me/6281113092828?text=" + encodeURIComponent(text);
 
         window.open(url, '_blank');
 
@@ -455,3 +455,5 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     }
   }, { passive: true });
 })();
+
+

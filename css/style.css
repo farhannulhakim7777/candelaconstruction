@@ -30,6 +30,125 @@
   --container-pad: clamp(20px, 5vw, 80px);
 
   --nav-h: 70px;
+
+  [data-theme="dark"] {
+    --black: #f2f0ec;
+    --off-black: #e8e6e2;
+    --charcoal: #2a2a2a;
+    --slate: #3a3a3a;
+    --mid-gray: #a0a0a0;
+    --light-gray: #6a6a6a;
+    --off-white: #111111;
+    --white: #1a1a1a;
+    --gold: #c8a96e;
+    --gold-dim: #9a7d4a;
+    --gold-light: #e8d5a8;
+  }
+  
+  [data-theme="dark"] body {
+    background: #111111;
+    color: #f2f0ec;
+  }
+  
+  [data-theme="dark"] .hero-panel {
+    background: linear-gradient(180deg,
+      rgba(20,20,20,0.92) 0%,
+      rgba(15,15,15,0.85) 100%);
+    border-color: rgba(255,255,255,0.08);
+  }
+  
+  [data-theme="dark"] #hero {
+    background: #0d0d0d;
+  }
+  
+  [data-theme="dark"] .hero-headline,
+  [data-theme="dark"] .section-heading {
+    color: var(--off-white);
+  }
+  
+  [data-theme="dark"] .about-lead {
+    color: #c8c4bc;
+  }
+  
+  [data-theme="dark"] .about-text p,
+  [data-theme="dark"] .commitment-text p {
+    color: #888880;
+  }
+  
+  [data-theme="dark"] #commitment {
+    background: #111111;
+  }
+  
+  [data-theme="dark"] .pillar {
+    background: #1a1a1a;
+  }
+  
+  [data-theme="dark"] .pillar:hover {
+    background: #222222;
+  }
+  
+  [data-theme="dark"] .pillar h4 {
+    color: #f2f0ec;
+  }
+  
+  [data-theme="dark"] .contact-form-wrap {
+    background: #1a1a1a;
+    box-shadow: 0 4px 60px rgba(0,0,0,0.3);
+  }
+  
+  [data-theme="dark"] .form-group input,
+  [data-theme="dark"] .form-group textarea,
+  [data-theme="dark"] .form-group select {
+    background: #111111;
+    border-color: rgba(255,255,255,0.1);
+    color: #f2f0ec;
+  }
+  
+  [data-theme="dark"] .contact-item {
+    border-color: rgba(255,255,255,0.08);
+  }
+  
+  [data-theme="dark"] .contact-item:hover {
+    background: rgba(200,169,110,0.06);
+  }
+  
+  [data-theme="dark"] .contact-val {
+    color: #f2f0ec;
+  }
+  
+  [data-theme="dark"] #footer {
+    background: #0a0a0a;
+  }
+  
+  [data-theme="dark"] .stat strong {
+    color: #f2f0ec;
+  }
+  
+  [data-theme="dark"] .hero-link {
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.75);
+  }
+  
+  [data-theme="dark"] #hero .btn-ghost {
+    border-color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.75);
+  }
+  
+  [data-theme="dark"] .hero-media-meta {
+    background: rgba(20,20,20,0.85);
+    border-top-color: rgba(255,255,255,0.06);
+  }
+  
+  [data-theme="dark"] .hero-media-label {
+    color: rgba(255,255,255,0.5);
+  }
+  
+  * {
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease,
+      border-color 0.35s ease;
+  }
 }
 
 /* ─────────────────────────────── RESET & BASE */
@@ -296,6 +415,8 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+
+
 
 /* Desktop nav links — always flex, hidden on mobile */
 .nav-links {
