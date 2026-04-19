@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Candela Construction - Membangun Kualitas, Membangun Kehidupan</title>
+  <title>Candela Construction | Jasa Konstruksi & Renovasi Profesional</title>
   <meta name="description"
     content="Candela Construction adalah firma Design & Build unggulan di Tangerang. Spesialis Kontraktor, Sistem MEP, Interior, Eksterior, dan Desain Arsitektur standar SNI.">
   <meta name="keywords"
@@ -23,11 +23,42 @@
 
   <link rel="icon" href="/logo/candela.png" type="image/png" />
   <link rel="apple-touch-icon" href="/logo/candela.png">
+
+  <!-- Preconnect font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload gambar hero (above the fold) -->
+  <link rel="preload" as="image" href="/interior/newint/int4.png" />
+  <link rel="preload" as="image" href="/logo/candela.png" />
+
+  <!-- Preload thumbnail pertama tiap portfolio item -->
+  <link rel="preload" as="image" href="/originhouse/originhous.jpeg" />
+  <link rel="preload" as="image" href="/mthouse/mthouse1.jpg" />
+  <link rel="preload" as="image" href="/yudhistirahouse/yudis2.jpg" />
+  <link rel="preload" as="image" href="/opickhouse/opick2.jpg" />
+  <link rel="preload" as="image" href="/ryanhouse/ryan1.jpg" />
+  <link rel="preload" as="image" href="/elanghouse/elang3.jpg" />
+  <link rel="preload" as="image" href="/nephstore/neph3.jpg" />
+  <link rel="preload" as="image" href="/bubesunter/bube2.jpg" />
+  <link rel="preload" as="image" href="/interior/newint/int1.png" />
+  <link rel="preload" as="image" href="/interior/newint/int3.png" />
+  <link rel="preload" as="image" href="/interior/newint/int2.png" />
+  <link rel="preload" as="image" href="/swimmingpool/swim1.jpg" />
+  <link rel="preload" as="image" href="/posyandu/posyandu1.jpg" />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
+
+  <style>
+    /* Gambar portfolio langsung siap tanpa transition delay */
+    .portfolio-img-wrap img {
+      will-change: transform;
+      transform: translateZ(0);
+    }
+  </style>
 </head>
 
 <body>
@@ -37,7 +68,7 @@
     <div class="nav-inner">
 
       <a href="#hero" class="nav-logo">
-        <img src="/logo/candela.png" alt="Logo Candela" class="logo-img">
+        <img src="/logo/candela.png" alt="Logo Candela" class="logo-img" decoding="async">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">Tentang</a></li>
@@ -88,13 +119,14 @@
           <aside class="hero-panel hero-panel--media hero-card" aria-label="Galeri proyek Candela">
             <div class="hero-media">
               <div class="hero-media-slide active">
-                <img src="/interior/newint/int4.png" alt="Proyek konstruksi - struktur" loading="eager" />
+                <img src="/interior/newint/int4.png" alt="Proyek konstruksi - struktur" loading="eager" decoding="sync"
+                  fetchpriority="high" />
               </div>
               <div class="hero-media-slide">
-                <img src="/interior/newint/int10.jpg" alt="Proyek arsitektur - fasad modern" loading="lazy" />
+                <img src="/interior/newint/int10.jpg" alt="Proyek arsitektur - fasad modern" decoding="async" />
               </div>
               <div class="hero-media-slide">
-                <img src="/interior/newint/int2.png" alt="Bangunan komersial - detail urban" loading="lazy" />
+                <img src="/interior/newint/int2.png" alt="Bangunan komersial - detail urban" decoding="async" />
               </div>
 
             </div>
@@ -138,14 +170,10 @@
       <div class="about-grid">
         <div class="about-media reveal">
           <div class="about-img-main">
-            <img src="/ryanhouse/ryanhous.jpeg" alt="Tim Candela Construction sedang bekerja" loading="lazy" />
+            <img src="/ryanhouse/ryanhous.jpeg" alt="Tim Candela Construction sedang bekerja" decoding="async" />
           </div>
           <div class="about-img-accent">
-            <img src="/interior/int1.jpg" alt="Pengerjaan dengan presisi tinggi" loading="lazy" />
-            <!-- <div class="stat-badge">
-              <strong>3+</strong>
-              <span>Tahun Keunggulan</span>
-            </div> -->
+            <img src="/interior/int1.jpg" alt="Pengerjaan dengan presisi tinggi" decoding="async" />
           </div>
         </div>
         <div class="about-text reveal delay-1">
@@ -177,7 +205,6 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SERVICES -->
   <section id="services" class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
@@ -206,7 +233,7 @@
               <li>Koordinasi Subkontraktor</li>
             </ul>
           </div>
-          <div class="card-arrow">â†’</div>
+          <div class="card-arrow">→</div>
         </div>
 
         <div class="service-card reveal delay-1" data-index="02">
@@ -223,8 +250,7 @@
           <p class="card-brief">Solusi rekayasa Mechanical, Electrical & Plumbing yang terintegrasi.</p>
           <div class="card-detail">
             <p>Engineer MEP kami merancang dan memasang sistem bangunan yang kompleks namun bekerja secara mulus -
-              memastikan kenyamanan, keamanan, dan efisiensi. Kami mengintegrasikan seluruh disiplin menjadi satu sistem
-              utuh yang patuh standar dan andal untuk jangka panjang.</p>
+              memastikan kenyamanan, keamanan, dan efisiensi.</p>
             <ul>
               <li>Desain HVAC & Ventilasi</li>
               <li>Integrasi Sistem Kelistrikan</li>
@@ -232,7 +258,7 @@
               <li>Sistem Proteksi Kebakaran</li>
             </ul>
           </div>
-          <div class="card-arrow">â†’</div>
+          <div class="card-arrow">→</div>
         </div>
 
         <div class="service-card reveal delay-2" data-index="03">
@@ -247,8 +273,7 @@
           <p class="card-brief">Desain yang matang untuk setiap detail - di dalam maupun di luar ruang.</p>
           <div class="card-detail">
             <p>Dari kabinet custom hingga pelapis fasad, tim desain kami membentuk ruang dengan bahasa material yang
-              kuat dan logika spasial yang jelas. Kami percaya batas antara interior dan eksterior seharusnya menjadi
-              dialog, bukan pemisah.</p>
+              kuat dan logika spasial yang jelas.</p>
             <ul>
               <li>Perencanaan Ruang Interior</li>
               <li>Spesifikasi Material & Finishing</li>
@@ -256,7 +281,7 @@
               <li>Koordinasi Furnitur & Fixture</li>
             </ul>
           </div>
-          <div class="card-arrow">â†’</div>
+          <div class="card-arrow">→</div>
         </div>
 
         <div class="service-card reveal delay-3" data-index="04">
@@ -271,9 +296,7 @@
           <h3>Desain Arsitektur</h3>
           <p class="card-brief">Konsep arsitektur yang bermakna, berakar pada konteks dan ketelitian desain.</p>
           <div class="card-detail">
-            <p>Arsitek kami mengembangkan desain yang responsif terhadap tapak, iklim, dan perilaku pengguna. Kami
-              menyiapkan dokumen yang lengkap - dari sketsa konsep hingga gambar kerja - dengan presisi dan perhatian
-              tinggi.</p>
+            <p>Arsitek kami mengembangkan desain yang responsif terhadap tapak, iklim, dan perilaku pengguna.</p>
             <ul>
               <li>Desain Konseptual & Skematik</li>
               <li>Pengembangan Desain</li>
@@ -281,13 +304,12 @@
               <li>Bantuan Perizinan & Regulasi</li>
             </ul>
           </div>
-          <div class="card-arrow">â†’</div>
+          <div class="card-arrow">→</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• COMMITMENT / HSE -->
   <section id="commitment" class="section">
     <div class="container">
       <div class="commitment-inner">
@@ -295,11 +317,9 @@
           <div class="section-label">Keselamatan & Standar</div>
           <h2 class="section-heading">Komitmen Kami<br /><em>Menuju Nol.</em></h2>
           <p>Kesehatan, Keselamatan, dan Lingkungan bukan sekadar formalitas kepatuhan di Candela - ini adalah nilai
-            inti yang tertanam dalam setiap tindakan di setiap proyek. Kebijakan Nol Kecelakaan kami berarti tidak ada
-            tenggat waktu atau tekanan anggaran yang boleh mengorbankan keselamatan tim kami.</p>
-          <p>Seluruh proyek Candela dirancang dan dilaksanakan sesuai <strong>SNI (Standar Nasional Indonesia)</strong>,
-            untuk memastikan integritas struktur, ketahanan terhadap api, dan daya tahan jangka panjang yang melindungi
-            pengguna maupun investasi.</p>
+            inti yang tertanam dalam setiap tindakan di setiap proyek.</p>
+          <p>Seluruh proyek Candela dirancang dan dilaksanakan sesuai <strong>SNI (Standar Nasional Indonesia)</strong>.
+          </p>
           <a href="#contact" class="btn-primary">Diskusikan Proyek Anda</a>
         </div>
         <div class="commitment-pillars reveal delay-1">
@@ -324,8 +344,7 @@
             </div>
             <h4>Standar SNI</h4>
             <p>Kepatuhan penuh terhadap Standar Nasional Indonesia untuk sistem struktur, kelistrikan, dan proteksi
-              kebakaran.
-            </p>
+              kebakaran.</p>
           </div>
           <div class="pillar">
             <div class="pillar-icon">
@@ -347,8 +366,7 @@
               </svg>
             </div>
             <h4>Kepedulian Lingkungan</h4>
-            <p>Pengelolaan limbah yang bertanggung jawab, pengendalian debu, dan praktik kerja yang meminimalkan
-              gangguan.</p>
+            <p>Pengelolaan limbah yang bertanggung jawab dan praktik kerja yang meminimalkan gangguan.</p>
           </div>
         </div>
       </div>
@@ -356,7 +374,6 @@
     <div class="commitment-bg-text" aria-hidden="true">ZERO</div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PORTFOLIO -->
   <section id="portfolio" class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
@@ -370,22 +387,16 @@
       </div>
       <div class="portfolio-grid" id="portfolioGrid">
 
-        <!-- â”€â”€ Origin House â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal" data-category="residential" data-project="Origin House"
           data-project-cat="Hunian"
           data-project-desc="Hunian keluarga yang tenang dengan inspirasi bentuk vernakular dan detail kontemporer."
-          data-images='[
-            {"src":"/originhouse/origin1.jpg","caption":""},
-            {"src":"/originhouse/origin2.jpg","caption":""},
-            {"src":"/originhouse/origin3.jpg","caption":""}
-          ]'>
+          data-images='[{"src":"/originhouse/origin1.jpg","caption":""},{"src":"/originhouse/origin2.jpg","caption":""},{"src":"/originhouse/origin3.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/originhouse/originhous.jpeg" alt="Origin House" loading="lazy" />
+            <img src="/originhouse/originhous.jpeg" alt="Origin House" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Hunian</span>
                 <h3>Origin House</h3>
-                <p></p>
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -398,23 +409,16 @@
           </div>
         </div>
 
-        <!-- â”€â”€ MT House â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="portfolio-item reveal delay-1" data-category="residential" data-project="MT House"
           data-project-cat="Hunian"
           data-project-desc="Bentuk geometris yang tegas, dilembutkan oleh pilihan material hangat dan lanskap hijau."
-          data-images='[
-            {"src":"/mthouse/mthouse1.jpg","caption":""},
-            {"src":"/mthouse/mthouse2.jpg","caption":""},
-            {"src":"/mthouse/mthouse3.jpg","caption":""}
-            
-          ]'>
+          data-images='[{"src":"/mthouse/mthouse1.jpg","caption":""},{"src":"/mthouse/mthouse2.jpg","caption":""},{"src":"/mthouse/mthouse3.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/mthouse/mthouse1.jpg" alt="MT House" loading="lazy" />
+            <img src="/mthouse/mthouse1.jpg" alt="MT House" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Hunian</span>
                 <h3>MT House</h3>
-                <!-- <p>Bentuk geometris yang tegas, dilembutkan oleh pilihan material hangat dan lanskap hijau.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -427,23 +431,15 @@
           </div>
         </div>
 
-
-
-        <!-- â”€â”€ Bube Store â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
-
         <div class="portfolio-item reveal" data-category="residential" data-project="yudhistirahouse"
-          data-project-cat="Hunian" data-project-desc="" data-images='[
-            {"src":"/yudhistirahouse/yudis1.jpg","caption":""},
-            {"src":"/yudhistirahouse/yudis2.jpg","caption":""},
-            {"src":"/yudhistirahouse/yudis3.jpg","caption":""}
-          ]'>
+          data-project-cat="Hunian" data-project-desc=""
+          data-images='[{"src":"/yudhistirahouse/yudis1.jpg","caption":""},{"src":"/yudhistirahouse/yudis2.jpg","caption":""},{"src":"/yudhistirahouse/yudis3.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/yudhistirahouse/yudis2.jpg" alt="" loading="lazy" />
+            <img src="/yudhistirahouse/yudis2.jpg" alt="Yudhistira House" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Hunian</span>
                 <h3>Yudhistira House</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -455,23 +451,19 @@
             </div>
           </div>
         </div>
+
         <div class="portfolio-item reveal" data-category="residential" data-project="opick house"
           data-project-cat="Komersial Khusus"
           data-project-desc="Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur."
-          data-images='[
-            {"src":"/opickhouse/opick1.jpg","caption":""},
-            {"src":"/opickhouse/opick2.jpg","caption":""},
-            {"src":"/opickhouse/opick3.jpg","caption":""}
-          ]'>
+          data-images='[{"src":"/opickhouse/opick1.jpg","caption":""},{"src":"/opickhouse/opick2.jpg","caption":""},{"src":"/opickhouse/opick3.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/opickhouse/opick2.jpg" alt="Bube Store" loading="lazy" />
+            <img src="/opickhouse/opick2.jpg" alt="Opick House" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Hunian</span>
-                <h3>Opick House House</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
+                <h3>Opick House</h3>
               </div>
-              <button class="portfolio-zoom" aria-label="Lihat Bube Store">
+              <button class="portfolio-zoom" aria-label="Lihat Opick House">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -481,21 +473,18 @@
             </div>
           </div>
         </div>
+
         <div class="portfolio-item reveal" data-category="residential" data-project="Ryan House" data-project-cat=""
-          data-project-desc="" data-images='[
-            {"src":"/ryanhouse/ryan1.jpg","caption":""},
-            {"src":"/ryanhouse/ryan2.jpg","caption":""},
-            {"src":"/ryanhouse/ryan3.jpg","caption":""}
-          ]'>
+          data-project-desc=""
+          data-images='[{"src":"/ryanhouse/ryan1.jpg","caption":""},{"src":"/ryanhouse/ryan2.jpg","caption":""},{"src":"/ryanhouse/ryan3.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/ryanhouse/ryan1.jpg" alt="Bube Store" loading="lazy" />
+            <img src="/ryanhouse/ryan1.jpg" alt="Ryan House" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Hunian</span>
                 <h3>Ryan House</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
-              <button class="portfolio-zoom" aria-label="Lihat Bube Store">
+              <button class="portfolio-zoom" aria-label="Lihat Ryan House">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" />
@@ -505,19 +494,16 @@
             </div>
           </div>
         </div>
+
         <div class="portfolio-item reveal" data-category="residential" data-project="Elang House" data-project-cat=""
-          data-project-desc="" data-images='[
-            {"src":"/elanghouse/elang1.jpg","caption":""},
-            {"src":"/elanghouse/elang2.jpg","caption":""},
-            {"src":"/elanghouse/elang3.jpg","caption":""}
-          ]'>
+          data-project-desc=""
+          data-images='[{"src":"/elanghouse/elang1.jpg","caption":""},{"src":"/elanghouse/elang2.jpg","caption":""},{"src":"/elanghouse/elang3.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/elanghouse/elang3.jpg" alt="" loading="lazy" />
+            <img src="/elanghouse/elang3.jpg" alt="Elang House" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Hunian</span>
                 <h3>Elang House</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -529,19 +515,16 @@
             </div>
           </div>
         </div>
+
         <div class="portfolio-item reveal" data-category="commercial" data-project="Neph Store" data-project-cat=""
-          data-project-desc="" data-images='[
-            {"src":"/nephstore/neph1.jpg","caption":""},
-            {"src":"/nephstore/neph2.jpg","caption":""},
-            {"src":"/nephstore/neph3.jpg","caption":""}
-          ]'>
+          data-project-desc=""
+          data-images='[{"src":"/nephstore/neph1.jpg","caption":""},{"src":"/nephstore/neph2.jpg","caption":""},{"src":"/nephstore/neph3.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/nephstore/neph3.jpg" alt="" loading="lazy" />
+            <img src="/nephstore/neph3.jpg" alt="Neph Store" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Store</span>
                 <h3>Neph Store</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -553,20 +536,16 @@
             </div>
           </div>
         </div>
+
         <div class="portfolio-item reveal" data-category="commercial" data-project="Bube Store" data-project-cat=""
-          data-project-desc="" data-images='[
-            {"src":"/bubedewi/bube3.jpg","caption":""},
-            {"src":"/bubedewi/bube4.jpg","caption":""},
-            {"src":"/bubesunter/bube1.jpg","caption":""}
-           
-          ]'>
+          data-project-desc=""
+          data-images='[{"src":"/bubedewi/bube3.jpg","caption":""},{"src":"/bubedewi/bube4.jpg","caption":""},{"src":"/bubesunter/bube1.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/bubesunter/bube2.jpg" alt="" loading="lazy" />
+            <img src="/bubesunter/bube2.jpg" alt="Bube Store" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Store</span>
                 <h3>Bube Store</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -578,48 +557,16 @@
             </div>
           </div>
         </div>
-
-
 
         <div class="portfolio-item reveal" data-category="commercial" data-project="Interior Project"
-          data-project-cat="" data-project-desc="" data-images='[
-            {"src":"/interior/newint/int2.png","caption":""},
-            {"src":"/interior/newint/int3.png","caption":""},
-            {"src":"/interior/newint/int4.png","caption":""}
-           
-          ]'>
+          data-project-cat="" data-project-desc=""
+          data-images='[{"src":"/interior/newint/int2.png","caption":""},{"src":"/interior/newint/int3.png","caption":""},{"src":"/interior/newint/int4.png","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/interior/newint/int1.png" alt="" loading="lazy" />
+            <img src="/interior/newint/int1.png" alt="Interior Project" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">interior</span>
+                <span class="portfolio-cat">Interior</span>
                 <h3>Interior</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
-              </div>
-              <button class="portfolio-zoom" aria-label="">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" />
-                </svg>
-                <span class="zoom-count">3</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal" data-category="commercial" data-project="Interior Project"
-          data-project-cat="" data-project-desc="" data-images='[
-            {"src":"/interior/newint/int5.png","caption":""},
-            {"src":"/interior/newint/int6.png","caption":""},
-            {"src":"/interior/newint/int7.png","caption":""}
-           
-          ]'>
-          <div class="portfolio-img-wrap">
-            <img src="/interior/newint/int3.png" alt="" loading="lazy" />
-            <div class="portfolio-overlay">
-              <div class="portfolio-info">
-                <span class="portfolio-cat">interior</span>
-                <h3>Interior</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -632,21 +579,15 @@
           </div>
         </div>
 
-
         <div class="portfolio-item reveal" data-category="commercial" data-project="Interior Project"
-          data-project-cat="" data-project-desc="" data-images='[
-            {"src":"/interior/newint/int8.jpg","caption":""},
-            {"src":"/interior/newint/int9.png","caption":""},
-            {"src":"/interior/newint/int10.jpg","caption":""}
-           
-          ]'>
+          data-project-cat="" data-project-desc=""
+          data-images='[{"src":"/interior/newint/int5.png","caption":""},{"src":"/interior/newint/int6.png","caption":""},{"src":"/interior/newint/int7.png","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/interior/newint/int2.png" alt="" loading="lazy" />
+            <img src="/interior/newint/int3.png" alt="Interior Project" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
-                <span class="portfolio-cat">interior</span>
+                <span class="portfolio-cat">Interior</span>
                 <h3>Interior</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -658,45 +599,37 @@
             </div>
           </div>
         </div>
+
+        <div class="portfolio-item reveal" data-category="commercial" data-project="Interior Project"
+          data-project-cat="" data-project-desc=""
+          data-images='[{"src":"/interior/newint/int8.jpg","caption":""},{"src":"/interior/newint/int9.png","caption":""},{"src":"/interior/newint/int10.jpg","caption":""}]'>
+          <div class="portfolio-img-wrap">
+            <img src="/interior/newint/int2.png" alt="Interior Project" decoding="async" fetchpriority="high" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Interior</span>
+                <h3>Interior</h3>
+              </div>
+              <button class="portfolio-zoom" aria-label="">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="portfolio-item reveal" data-category="commercial" data-project="Swimming Project"
-          data-project-cat="" data-project-desc="" data-images='[
-            {"src":"/swimmingpool/swim2.jpg","caption":""},
-            {"src":"/swimmingpool/swim3.jpg","caption":""},
-            {"src":"/swimmingpool/swim1.jpg","caption":""}
-           
-          ]'>
+          data-project-cat="" data-project-desc=""
+          data-images='[{"src":"/swimmingpool/swim2.jpg","caption":""},{"src":"/swimmingpool/swim3.jpg","caption":""},{"src":"/swimmingpool/swim1.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/swimmingpool/swim1.jpg" alt="" loading="lazy" />
+            <img src="/swimmingpool/swim1.jpg" alt="Swimming Pool" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Swimming Pool Project</span>
                 <h3>Swimming Pool</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
-              </div>
-              <button class="portfolio-zoom" aria-label="">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" />
-                </svg>
-                <span class="zoom-count">3</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal" data-category="commercial" data-project="Healthy Project" data-project-cat=""
-          data-project-desc="" data-images='[
-            {"src":"/posyandu/posyandu1.jpg","caption":""},
-            {"src":"/posyandu/posyandu2.jpg","caption":""},
-            {"src":"/posyandu/posyandu1.jpg","caption":""}
-           
-          ]'>
-          <div class="portfolio-img-wrap">
-            <img src="/posyandu/posyandu1.jpg" alt="" loading="lazy" />
-            <div class="portfolio-overlay">
-              <div class="portfolio-info">
-                <span class="portfolio-cat">Healthy Project</span>
-                <h3>Posyandu</h3>
-                <!-- <p>Ruang ritel konseptual yang mengutamakan alur pengalaman dan identitas merek melalui arsitektur.</p> -->
               </div>
               <button class="portfolio-zoom" aria-label="">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -709,12 +642,31 @@
           </div>
         </div>
 
+        <div class="portfolio-item reveal" data-category="commercial" data-project="Healthy Project" data-project-cat=""
+          data-project-desc=""
+          data-images='[{"src":"/posyandu/posyandu1.jpg","caption":""},{"src":"/posyandu/posyandu2.jpg","caption":""},{"src":"/posyandu/posyandu1.jpg","caption":""}]'>
+          <div class="portfolio-img-wrap">
+            <img src="/posyandu/posyandu1.jpg" alt="Posyandu" decoding="async" fetchpriority="high" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Healthy Project</span>
+                <h3>Posyandu</h3>
+              </div>
+              <button class="portfolio-zoom" aria-label="">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="zoom-count">3</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• CONTACT -->
   <section id="contact" class="section">
     <div class="container">
       <div class="contact-grid">
@@ -736,8 +688,7 @@
                 <span class="contact-val">+62 8111 3092 828</span>
               </div>
             </a>
-            <a href="/cdn-cgi/l/email-protection#98fbf9f6fcfdf4f9f3f7f6ebeceaedf3ebf1d8fff5f9f1f4b6fbf7f5"
-              class="contact-item">
+            <a href="mailto:candelaconstruction@gmail.com" class="contact-item">
               <div class="contact-icon">
                 <svg viewBox="0 0 24 24" fill="none">
                   <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
@@ -746,8 +697,7 @@
               </div>
               <div>
                 <span class="contact-label">Email</span>
-                <span class="contact-val"><span class="__cf_email__"
-                    data-cfemail="1073717e74757c717b7f7e636462657b637950777d71797c3e737f7d">candelaconstruction@gmail.com</span></span>
+                <span class="contact-val">candelaconstruction@gmail.com</span>
               </div>
             </a>
             <div class="contact-item">
@@ -834,7 +784,6 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• FOOTER -->
   <footer id="footer">
     <div class="container">
       <div class="footer-top">
@@ -867,9 +816,7 @@
         <div class="footer-contact">
           <h5>Hubungi Kami</h5>
           <p><a href="tel:+6281113092828">+62 811 1309 2828</a></p>
-          <p><a href="candelaconstruction@gmail.com"><span class="__cf_email__"
-                data-cfemail="1a797b747e7f767b717574696e686f7169735a7d777b737634797577">candelaconstruction@gmail.com</span></a>
-          </p>
+          <p><a href="mailto:candelaconstruction@gmail.com">candelaconstruction@gmail.com</a></p>
           <p>Graha Segovia, Tangerang</p>
         </div>
       </div>
@@ -880,7 +827,6 @@
     </div>
   </footer>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MODAL -->
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Penampil Gambar Proyek">
     <div class="modal-inner">
       <div class="modal-header">
