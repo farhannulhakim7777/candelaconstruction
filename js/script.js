@@ -354,6 +354,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
       email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
       service: v => v !== '',
       message: v => v.trim().length >= 10,
+      alamat: v => v.trim().length >= 5,   
     };
 
     const validate = (input) => {
@@ -391,13 +392,13 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
         };
 
         const text =
-          "Halo Candela Construction 👋\n\n" +
-          "Nama: " + getVal('name') + "\n" +
-          "Perusahaan: " + getVal('company') + "\n" +
-          "Email: " + getVal('email') + "\n\n" +
-          "Layanan: " + getVal('service') + "\n" +
-          "Budget: " + getVal('budget') + "\n\n" +
-          "Pesan:\n" + getVal('message');
+        "Halo Candela Construction 👋\n\n" +
+        "Nama: "      + getVal('name')    + "\n" +
+        "Perusahaan: " + getVal('company') + "\n" +
+        "Email: "     + getVal('email')   + "\n\n" +
+        "Layanan: "   + getVal('service') + "\n" +
+        "Alamat Perusahaan: " + getVal('alamat') + "\n\n" + 
+        "Pesan:\n"    + getVal('message');
 
         const url = "https://wa.me/6281113092828?text=" + encodeURIComponent(text);
 
