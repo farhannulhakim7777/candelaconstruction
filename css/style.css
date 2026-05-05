@@ -794,25 +794,57 @@ button {
 
 .hero-headline {
   font-family: var(--ff-display);
-  font-size: clamp(2.8rem, 6vw, 7rem);
-  /* ← dari clamp(4.5rem, 12vw, 14rem) */
-  line-height: 0.95;
-  letter-spacing: 0.01em;
+  font-weight: 700;
   color: var(--black);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+
+  /* ukuran adaptif */
+  font-size: clamp(2rem, 4.5vw, 5.5rem);
+
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+
   margin-bottom: 1.5rem;
-  /* ← dari 2.5rem */
-  gap: 0.35rem;
+
+  /* biar sejajar & ga keluar */
+  max-width: 100%;
+  overflow: hidden;
 }
 
+/* style BUILD */
 .hero-headline em {
   font-family: var(--ff-serif);
   font-style: italic;
   font-weight: 300;
-  font-size: 0.78em;
   color: var(--gold);
+  margin-right: 0.25em;
+}
+
+@media (min-width: 1200px) {
+  .hero-headline {
+    white-space: nowrap;
+
+    /* kecilkan sedikit khusus desktop */
+    font-size: clamp(2.5rem, 3.8vw, 4.5rem);
+  }
+}
+
+/* =========================
+   TABLET (mulai turun rapi)
+========================= */
+@media (max-width: 1199px) {
+  .hero-headline {
+    white-space: normal;
+  }
+}
+
+/* =========================
+   MOBILE (lebih kecil & rapi)
+========================= */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    line-height: 1.15;
+  }
 }
 
 .line-wrap {
