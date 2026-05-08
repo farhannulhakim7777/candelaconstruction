@@ -1,287 +1,207 @@
-/* ═══════════════════════════════════════════════════════════════
-   CANDELA CONSTRUCTION — script.js
-   Modules: Navbar · Hero Slider · Scroll Reveal · Portfolio Filter
-            Portfolio Modal · Contact Form Validation · Active Links
-═══════════════════════════════════════════════════════════════ */
-
 'use strict'
 
-/* ─────────────────────────────── UTILITY */
-const qs = (sel, ctx = document) => ctx.querySelector(sel)
-const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)]
+const qs = (s, c = document) => c.querySelector(s)
+const qsa = (s, c = document) => [...c.querySelectorAll(s)]
 
-/* ─────────────────────────────── NAVBAR */
-;(function initNavbar () {
+/* ─── NAVBAR */
+;(function () {
   const navbar = qs('#navbar')
   const toggle = qs('#navToggle')
-  const mobileMenu = qs('#mobileMenu')
-  const desktopLinks = qsa('.nav-links a[href^="#"]')
-  const mobileLinks = qsa('.mobile-menu a[href^="#"]')
-  const allNavLinks = [...desktopLinks, ...mobileLinks]
+  const menu = qs('#mobileMenu')
+  const allLinks = qsa('.nav-links a[href^="#"], .mobile-menu a[href^="#"]')
 
-  // ── Scroll: darken + blur on desktop
   window.addEventListener(
     'scroll',
-    () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50)
-    },
+    () => navbar.classList.toggle('scrolled', scrollY > 50),
     { passive: true }
   )
 
-  const isOpen = () => mobileMenu.classList.contains('open')
+  const isOpen = () => menu.classList.contains('open')
 
-  const closeMenu = () => {
-    toggle.classList.remove('open')
-    mobileMenu.classList.remove('open')
-    mobileMenu.setAttribute('aria-hidden', 'true')
-    toggle.setAttribute('aria-expanded', 'false')
-    document.body.classList.remove('menu-open')
+  const setMenu = open => {
+    toggle.classList.toggle('open', open)
+    menu.classList.toggle('open', open)
+    menu.setAttribute('aria-hidden', String(!open))
+    toggle.setAttribute('aria-expanded', String(open))
+    document.body.classList.toggle('menu-open', open)
   }
 
-  const openMenu = () => {
-    toggle.classList.add('open')
-    mobileMenu.classList.add('open')
-    mobileMenu.setAttribute('aria-hidden', 'false')
-    toggle.setAttribute('aria-expanded', 'true')
-    document.body.classList.add('menu-open')
-  }
-
-  // ── Hamburger toggle
   toggle.addEventListener('click', e => {
     e.stopPropagation()
-    isOpen() ? closeMenu() : openMenu()
+    setMenu(!isOpen())
   })
-
-  // ── Close when a menu link is tapped
-  mobileMenu.addEventListener('click', e => {
-    if (e.target.tagName === 'A') closeMenu()
-  })
-
-  // ── Close on outside click
-  document.addEventListener('click', e => {
-    if (
+  menu.addEventListener(
+    'click',
+    e => e.target.tagName === 'A' && setMenu(false)
+  )
+  document.addEventListener(
+    'click',
+    e =>
       isOpen() &&
       !navbar.contains(e.target) &&
-      !mobileMenu.contains(e.target)
-    ) {
-      closeMenu()
-    }
-  })
+      !menu.contains(e.target) &&
+      setMenu(false)
+  )
+  document.addEventListener(
+    'keydown',
+    e => e.key === 'Escape' && isOpen() && setMenu(false)
+  )
 
-  // ── Close on Escape
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && isOpen()) closeMenu()
-  })
-
-  // ── Reset on resize to desktop
-  let resizeTimer
+  let rt
   window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer)
-    resizeTimer = setTimeout(() => {
-      if (window.innerWidth > 768) closeMenu()
-    }, 100)
+    clearTimeout(rt)
+    rt = setTimeout(() => innerWidth > 768 && setMenu(false), 100)
   })
 
-  // ── Active link highlight on scroll (desktop nav-links)
   const sections = qsa('section[id], footer[id]')
-
   const updateActive = () => {
-    const scrollMid = window.scrollY + window.innerHeight * 0.4
+    const mid = scrollY + innerHeight * 0.4
     let active = null
-    sections.forEach(sec => {
-      if (sec.offsetTop <= scrollMid) active = sec.id
-    })
-    allNavLinks.forEach(link => {
-      link.classList.toggle(
-        'active',
-        link.getAttribute('href') === `#${active}`
-      )
-    })
+    sections.forEach(s => s.offsetTop <= mid && (active = s.id))
+    allLinks.forEach(l =>
+      l.classList.toggle('active', l.getAttribute('href') === `#${active}`)
+    )
   }
-
   window.addEventListener('scroll', updateActive, { passive: true })
   updateActive()
 })()
 
-
-
-/* ─────────────────────────────── HERO MEDIA SLIDER (OPTIMIZED - NO DELAY) */
-;(function initHeroMediaSlider () {
+/* ─── HERO SLIDER */
+;(function () {
   const slides = qsa('.hero-media-slide')
   const dotsWrap = qs('#heroMediaDots')
-  const prevBtn = qs('.hero-media-nav.prev')
-  const nextBtn = qs('.hero-media-nav.next')
-
   if (!slides.length || !dotsWrap) return
 
   let idx = 0
 
-  // ── Preload all images on init
-  const preloadImages = () => {
-    slides.forEach(slide => {
-      const img = qs('img', slide)
-      if (img && img.src) {
-        const tempImg = new Image()
-        tempImg.src = img.src
-      }
-    })
-  }
+  slides.forEach(s => {
+    const img = qs('img', s)
+    if (img?.src) new Image().src = img.src
+  })
 
   const buildDots = () => {
     dotsWrap.innerHTML = ''
     slides.forEach((_, i) => {
-      const dot = document.createElement('span')
-      dot.className = 'hero-media-dot' + (i === idx ? ' active' : '')
-      dot.style.cursor = 'pointer'
-      dot.addEventListener('click', () => goTo(i))
-      dotsWrap.appendChild(dot)
+      const d = Object.assign(document.createElement('span'), {
+        className: 'hero-media-dot' + (i === idx ? ' active' : ''),
+        style: 'cursor:pointer'
+      })
+      d.addEventListener('click', () => goTo(i))
+      dotsWrap.appendChild(d)
     })
-  }
-
-  const updateDots = () => {
-    ;[...dotsWrap.children].forEach((d, i) =>
-      d.classList.toggle('active', i === idx)
-    )
   }
 
   const goTo = n => {
     slides[idx].classList.remove('active')
     idx = (n + slides.length) % slides.length
     slides[idx].classList.add('active')
-    updateDots()
+    ;[...dotsWrap.children].forEach((d, i) =>
+      d.classList.toggle('active', i === idx)
+    )
   }
 
-  prevBtn?.addEventListener('click', () => goTo(idx - 1))
-  nextBtn?.addEventListener('click', () => goTo(idx + 1))
+  qs('.hero-media-nav.prev')?.addEventListener('click', () => goTo(idx - 1))
+  qs('.hero-media-nav.next')?.addEventListener('click', () => goTo(idx + 1))
 
-  preloadImages()
   buildDots()
   goTo(0)
 })()
 
-/* ─────────────────────────────── INTERSECTION OBSERVER — REVEAL ON SCROLL */
-;(function initReveal () {
-  const revealEls = qsa('.reveal')
-
+/* ─── REVEAL ON SCROLL */
+;(function () {
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view')
-          observer.unobserve(entry.target)
+    entries =>
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view')
+          observer.unobserve(e.target)
         }
-      })
-    },
-    {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    }
+      }),
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
   )
-
-  revealEls.forEach(el => observer.observe(el))
+  qsa('.reveal').forEach(el => observer.observe(el))
 })()
 
-/* ─────────────────────────────── PORTFOLIO FILTER */
-;(function initPortfolioFilter () {
+/* ─── PORTFOLIO FILTER */
+;(function () {
   const btns = qsa('.filter-btn')
   const items = qsa('.portfolio-item')
-
-  btns.forEach(btn => {
+  btns.forEach(btn =>
     btn.addEventListener('click', () => {
       btns.forEach(b => b.classList.remove('active'))
       btn.classList.add('active')
-      const filter = btn.dataset.filter
-
-      items.forEach(item => {
-        const match = filter === 'all' || item.dataset.category === filter
-        item.classList.toggle('hidden', !match)
-      })
+      const f = btn.dataset.filter
+      items.forEach(item =>
+        item.classList.toggle(
+          'hidden',
+          f !== 'all' && item.dataset.category !== f
+        )
+      )
     })
-  })
+  )
 })()
 
-/* ─────────────────────────────── PORTFOLIO MODAL — PER-PROJECT GALLERY */
-;(function initPortfolioModal () {
+/* ─── PORTFOLIO MODAL */
+;(function () {
   const overlay = qs('#modalOverlay')
   const closeBtn = qs('#modalClose')
   const modalImg = qs('#modalImg')
   const modalCap = qs('#modalCaption')
   const modalDots = qs('#modalDots')
   const modalCtr = qs('#modalCounter')
-  const modalCat = qs('#modalProjectCat')
-  const modalName = qs('#modalProjectName')
   const prevBtn = qs('#modalPrev')
   const nextBtn = qs('#modalNext')
 
-  // State for current project gallery
-  let images = [] // array of {src, caption}
-  let current = 0
+  let images = [],
+    current = 0
 
-  /* ── Build dot indicators ── */
   const buildDots = () => {
     modalDots.innerHTML = ''
     images.forEach((_, i) => {
-      const dot = document.createElement('button')
-      dot.className = 'modal-dot' + (i === current ? ' active' : '')
-      dot.setAttribute('aria-label', `Photo ${i + 1}`)
-      dot.addEventListener('click', () => goTo(i))
-      modalDots.appendChild(dot)
+      const d = document.createElement('button')
+      d.className = 'modal-dot' + (i === current ? ' active' : '')
+      d.setAttribute('aria-label', `Photo ${i + 1}`)
+      d.addEventListener('click', () => goTo(i))
+      modalDots.appendChild(d)
     })
   }
 
-  const updateDots = () => {
-    qsa('.modal-dot', modalDots).forEach((d, i) =>
-      d.classList.toggle('active', i === current)
-    )
+  const setNav = show => {
+    prevBtn.style.display = nextBtn.style.display = show ? '' : 'none'
   }
 
-  const updateCounter = () => {
-    modalCtr.innerHTML = `<em>${current + 1}</em> / ${images.length}`
-  }
-
-  /* ── Load a specific image index with fade ── */
   const goTo = idx => {
     current = (idx + images.length) % images.length
     modalImg.classList.add('fading')
     setTimeout(() => {
-      modalImg.src = images[current].src
-      modalImg.alt = images[current].caption || ''
-      modalCap.textContent = images[current].caption || ''
+      const img = images[current]
+      modalImg.src = img.src
+      modalImg.alt = modalCap.textContent = img.caption || ''
       modalImg.classList.remove('fading')
     }, 220)
-    updateDots()
-    updateCounter()
-    // Show/hide nav arrows when only 1 image
-    const showNav = images.length > 1
-    prevBtn.style.display = showNav ? '' : 'none'
-    nextBtn.style.display = showNav ? '' : 'none'
+    qsa('.modal-dot', modalDots).forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    )
+    modalCtr.innerHTML = `<em>${current + 1}</em> / ${images.length}`
   }
 
-  /* ── Open modal for a given card element ── */
-  const openModal = cardEl => {
-    // Parse images from data attribute
+  const openModal = card => {
     try {
-      images = JSON.parse(cardEl.dataset.images || '[]')
+      images = JSON.parse(card.dataset.images || '[]')
     } catch {
       images = []
     }
     if (!images.length) return
 
-    // Fill project header
-    modalCat.textContent = cardEl.dataset.projectCat || ''
-    modalName.textContent = cardEl.dataset.project || ''
+    qs('#modalProjectCat').textContent = card.dataset.projectCat || ''
+    qs('#modalProjectName').textContent = card.dataset.project || ''
 
     current = 0
     buildDots()
-    // Set image immediately (no fade on open)
     modalImg.src = images[0].src
-    modalImg.alt = images[0].caption || ''
-    modalCap.textContent = images[0].caption || ''
-    updateCounter()
-
-    const showNav = images.length > 1
-    prevBtn.style.display = showNav ? '' : 'none'
-    nextBtn.style.display = showNav ? '' : 'none'
+    modalImg.alt = modalCap.textContent = images[0].caption || ''
+    modalCtr.innerHTML = `<em>1</em> / ${images.length}`
+    setNav(images.length > 1)
 
     overlay.classList.add('open')
     document.body.style.overflow = 'hidden'
@@ -290,30 +210,21 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)]
   const closeModal = () => {
     overlay.classList.remove('open')
     document.body.style.overflow = ''
-    // Clear src after transition to avoid flash on reopen
     setTimeout(() => {
       modalImg.src = ''
     }, 400)
   }
 
-  /* ── Entire portfolio card clickable ── */
-qsa('.portfolio-item').forEach(item => {
-  item.style.cursor = 'pointer'
-
-  item.addEventListener('click', () => {
-    openModal(item)
+  qsa('.portfolio-item').forEach(item => {
+    item.style.cursor = 'pointer'
+    item.addEventListener('click', () => openModal(item))
   })
-})
 
-  /* ── Controls ── */
   closeBtn.addEventListener('click', closeModal)
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) closeModal()
-  })
+  overlay.addEventListener('click', e => e.target === overlay && closeModal())
   prevBtn.addEventListener('click', () => goTo(current - 1))
   nextBtn.addEventListener('click', () => goTo(current + 1))
 
-  /* ── Keyboard ── */
   document.addEventListener('keydown', e => {
     if (!overlay.classList.contains('open')) return
     if (e.key === 'Escape') closeModal()
@@ -321,30 +232,28 @@ qsa('.portfolio-item').forEach(item => {
     if (e.key === 'ArrowRight') goTo(current + 1)
   })
 
-  /* ── Touch / swipe ── */
-  let touchStartX = 0
+  let tx = 0
   overlay.addEventListener(
     'touchstart',
     e => {
-      touchStartX = e.touches[0].clientX
+      tx = e.touches[0].clientX
     },
     { passive: true }
   )
   overlay.addEventListener(
     'touchend',
     e => {
-      const delta = e.changedTouches[0].clientX - touchStartX
-      if (Math.abs(delta) < 40) return
-      delta < 0 ? goTo(current + 1) : goTo(current - 1)
+      const d = e.changedTouches[0].clientX - tx
+      if (Math.abs(d) >= 40) d < 0 ? goTo(current + 1) : goTo(current - 1)
     },
     { passive: true }
   )
 })()
 
-/* ─────────────────────────────── CONTACT FORM VALIDATION */
-;(function initContactForm () {
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('#contactForm')
+/* ─── CONTACT FORM */
+;(function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = qs('#contactForm')
     if (!form) return
 
     const validators = {
@@ -356,70 +265,40 @@ qsa('.portfolio-item').forEach(item => {
     }
 
     const validate = input => {
-      const name = input.name
-      if (!validators[name]) return true
-      const ok = validators[name](input.value)
+      const ok = !validators[input.name] || validators[input.name](input.value)
       input.classList.toggle('error', !ok)
       input.closest('.form-group')?.classList.toggle('show-error', !ok)
       return ok
     }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault() // ⛔ WAJIB
-
-      let allValid = true
-      form
-        .querySelectorAll('input, select, textarea')
-        .forEach(function (input) {
-          if (!validate(input)) allValid = false
-        })
-
-      if (!allValid) return
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      const valid = [...form.querySelectorAll('input, select, textarea')]
+        .map(validate)
+        .every(Boolean)
+      if (!valid) return
 
       const btn = form.querySelector('[type="submit"]')
-
+      const span = btn?.querySelector('span')
       if (btn) {
         btn.disabled = true
-        const span = btn.querySelector('span')
         if (span) span.textContent = 'Redirecting...'
       }
 
-      setTimeout(function () {
-        const getVal = name => {
-          const el = form.querySelector(`[name="${name}"]`)
-          return el ? el.value : '-'
-        }
-
-        const text =
-          'Halo Candela Construction 👋\n\n' +
-          'Nama: ' +
-          getVal('name') +
-          '\n' +
-          'Perusahaan: ' +
-          getVal('company') +
-          '\n' +
-          'Email: ' +
-          getVal('email') +
-          '\n\n' +
-          'Layanan: ' +
-          getVal('service') +
-          '\n' +
-          'Alamat Perusahaan: ' +
-          getVal('alamat') +
-          '\n\n' +
-          'Pesan:\n' +
-          getVal('message')
-
-        const url =
-          'https://wa.me/6281113092828?text=' + encodeURIComponent(text)
-
-        window.open(url, '_blank')
-
+      setTimeout(() => {
+        const g = n => form.querySelector(`[name="${n}"]`)?.value || '-'
+        const text = `Halo Candela Construction 👋\n\nNama: ${g(
+          'name'
+        )}\nPerusahaan: ${g('company')}\nEmail: ${g('email')}\n\nLayanan: ${g(
+          'service'
+        )}\nAlamat Perusahaan: ${g('alamat')}\n\nPesan:\n${g('message')}`
+        window.open(
+          'https://wa.me/6281113092828?text=' + encodeURIComponent(text),
+          '_blank'
+        )
         form.reset()
-
         if (btn) {
           btn.disabled = false
-          const span = btn.querySelector('span')
           if (span) span.textContent = 'Kirim Enquiry'
         }
       }, 400)
@@ -427,47 +306,46 @@ qsa('.portfolio-item').forEach(item => {
   })
 })()
 
-/* ─────────────────────────────── SMOOTH SCROLL (fallback for older browsers) */
-;(function initSmoothScroll () {
+/* ─── SMOOTH SCROLL */
+;(function () {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
-      const target = document.querySelector(link.getAttribute('href'))
+      const target = qs(link.getAttribute('href'))
       if (!target) return
       e.preventDefault()
       const navH =
         parseInt(
           getComputedStyle(document.documentElement).getPropertyValue('--nav-h')
         ) || 70
-      const top = target.getBoundingClientRect().top + window.scrollY - navH
-      window.scrollTo({ top, behavior: 'smooth' })
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + scrollY - navH,
+        behavior: 'smooth'
+      })
     })
   })
 })()
 
-/* ─────────────────────────────── PARALLAX — HERO (subtle) */
-;(function initHeroParallax () {
+/* ─── PARALLAX HERO */
+;(function () {
   const overlay = qs('.hero-overlay')
-  if (!overlay) return
-  // If hero overlay is disabled via CSS, parallax is not needed.
-  if (getComputedStyle(overlay).display === 'none') return
+  if (!overlay || getComputedStyle(overlay).display === 'none') return
+
   let ticking = false
+  const content = qs('.hero-content')
 
   window.addEventListener(
     'scroll',
     () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const y = window.scrollY
-          const limit = window.innerHeight
-          if (y < limit) {
-            const progress = y / limit
-            qs('.hero-content').style.transform = `translateY(${y * 0.35}px)`
-            overlay.style.opacity = 0.6 + progress * 0.35
-          }
-          ticking = false
-        })
-        ticking = true
-      }
+      if (ticking) return
+      requestAnimationFrame(() => {
+        const y = scrollY
+        if (y < innerHeight) {
+          content.style.transform = `translateY(${y * 0.35}px)`
+          overlay.style.opacity = 0.6 + (y / innerHeight) * 0.35
+        }
+        ticking = false
+      })
+      ticking = true
     },
     { passive: true }
   )
