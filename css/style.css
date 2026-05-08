@@ -674,7 +674,7 @@ button {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.9s var(--ease-in-out);
+  transition: opacity 0.3s var(--ease-in-out); /* ← ubah dari 0.9s jadi 0.3s */
 }
 
 .hero-media-slide.active {
@@ -1181,6 +1181,62 @@ button {
   }
 }
 
+/* ─────────────────────────────── HERO SUBTITLE */
+.hero-subtitle {
+  font-family: var(--ff-serif);
+  font-size: clamp(1rem, 1.5vw, 1.45rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8c8c8c;
+
+  line-height: 1.6;
+  max-width: 900px;
+
+  margin-top: 0.3rem;
+  margin-bottom: 1.8rem;
+
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroFade 0.8s 0.45s var(--ease-out-expo) forwards;
+}
+
+/* Large Tablet */
+@media (max-width: 1024px) {
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+    line-height: 1.65;
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-subtitle {
+    font-size: clamp(1rem, 3.8vw, 1.25rem);
+
+    letter-spacing: 0.07em;
+    line-height: 1.75;
+
+    max-width: 100%;
+
+    margin-bottom: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-subtitle {
+    font-size: clamp(0.98rem, 4.6vw, 1.15rem);
+
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+
+    margin-bottom: 1.1rem;
+  }
+}
 /* ─────────────────────────────── TICKER */
 .ticker-bar {
   background: var(--charcoal);
@@ -1670,9 +1726,11 @@ button {
   position: relative;
   overflow: hidden;
   background: var(--charcoal);
+  cursor: pointer;
+
   transition:
-    opacity 0.5s,
-    transform 0.5s;
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .portfolio-item.hidden {
@@ -1688,28 +1746,53 @@ button {
 }
 
 .portfolio-img-wrap img {
-  transition: transform 0.7s var(--ease-out-expo);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    filter 0.7s ease;
 }
 
+.portfolio-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    filter 0.7s ease;
+}
+
+/* Luxury cinematic hover */
 .portfolio-item:hover img {
-  transform: scale(1.06);
+  transform: scale(1.08);
+  filter: brightness(0.78);
 }
 
 .portfolio-overlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to top,
-    rgba(10, 10, 10, 0.92) 0%,
-    rgba(10, 10, 10, 0.3) 50%,
-    rgba(10, 10, 10, 0) 100%
+    rgba(10, 10, 10, 0.94) 0%,
+    rgba(10, 10, 10, 0.45) 45%,
+    rgba(10, 10, 10, 0.08) 100%
   );
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.75rem;
+
+  padding: 1.8rem;
+
   opacity: 0;
-  transition: opacity 0.4s;
+
+  transition:
+    opacity 0.55s ease,
+    background 0.55s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay {

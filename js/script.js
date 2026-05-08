@@ -103,8 +103,9 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)]
   updateActive()
 })()
 
-// hero slider
 
+
+/* ─────────────────────────────── HERO MEDIA SLIDER (OPTIMIZED - NO DELAY) */
 ;(function initHeroMediaSlider () {
   const slides = qsa('.hero-media-slide')
   const dotsWrap = qs('#heroMediaDots')
@@ -115,52 +116,24 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)]
 
   let idx = 0
 
-  const buildDots = () => {
-    dotsWrap.innerHTML = ''
-    slides.forEach((_, i) => {
-      const dot = document.createElement('span')
-      dot.className = 'hero-media-dot' + (i === idx ? ' active' : '')
-      dotsWrap.appendChild(dot)
+  // ── Preload all images on init
+  const preloadImages = () => {
+    slides.forEach(slide => {
+      const img = qs('img', slide)
+      if (img && img.src) {
+        const tempImg = new Image()
+        tempImg.src = img.src
+      }
     })
   }
 
-  const updateDots = () => {
-    ;[...dotsWrap.children].forEach((d, i) =>
-      d.classList.toggle('active', i === idx)
-    )
-  }
-
-  const goTo = n => {
-    slides[idx].classList.remove('active')
-    idx = (n + slides.length) % slides.length
-    slides[idx].classList.add('active')
-    updateDots()
-  }
-
-  // tombol manual
-  prevBtn?.addEventListener('click', () => goTo(idx - 1))
-  nextBtn?.addEventListener('click', () => goTo(idx + 1))
-
-  buildDots()
-  goTo(0)
-})()
-
-/* ─────────────────────────────── HERO MEDIA SLIDER (right card) */
-;(function initHeroMediaSlider () {
-  const slides = qsa('.hero-media-slide')
-  const dotsWrap = qs('#heroMediaDots')
-  const prevBtn = qs('.hero-media-nav.prev')
-  const nextBtn = qs('.hero-media-nav.next')
-
-  if (!slides.length || !dotsWrap) return
-
-  let idx = 0
-
   const buildDots = () => {
     dotsWrap.innerHTML = ''
     slides.forEach((_, i) => {
       const dot = document.createElement('span')
       dot.className = 'hero-media-dot' + (i === idx ? ' active' : '')
+      dot.style.cursor = 'pointer'
+      dot.addEventListener('click', () => goTo(i))
       dotsWrap.appendChild(dot)
     })
   }
@@ -181,6 +154,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)]
   prevBtn?.addEventListener('click', () => goTo(idx - 1))
   nextBtn?.addEventListener('click', () => goTo(idx + 1))
 
+  preloadImages()
   buildDots()
   goTo(0)
 })()
@@ -322,15 +296,14 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)]
     }, 400)
   }
 
-  /* ── Attach zoom buttons ── */
-  qsa('.portfolio-item').forEach(item => {
-    const btn = qs('.portfolio-zoom', item)
-    if (!btn) return
-    btn.addEventListener('click', e => {
-      e.stopPropagation()
-      openModal(item)
-    })
+  /* ── Entire portfolio card clickable ── */
+qsa('.portfolio-item').forEach(item => {
+  item.style.cursor = 'pointer'
+
+  item.addEventListener('click', () => {
+    openModal(item)
   })
+})
 
   /* ── Controls ── */
   closeBtn.addEventListener('click', closeModal)
