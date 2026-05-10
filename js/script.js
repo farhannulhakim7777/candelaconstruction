@@ -124,21 +124,35 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
 
 /* ─── PORTFOLIO FILTER */
 ;(function () {
-  const btns = qsa('.filter-btn')
+  const filterBtns = qsa('.filter-btn')
   const items = qsa('.portfolio-item')
-  btns.forEach(btn =>
+
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('active'))
+      filterBtns.forEach(b => b.classList.remove('active'))
       btn.classList.add('active')
-      const f = btn.dataset.filter
-      items.forEach(item =>
-        item.classList.toggle(
-          'hidden',
-          f !== 'all' && item.dataset.category !== f
-        )
-      )
+
+      const filter = btn.dataset.filter
+
+      items.forEach(item => {
+        const match = filter === 'all' || item.dataset.category === filter
+
+        if (match) {
+          item.classList.remove('hidden')
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              item.style.opacity = '1'
+              item.style.transform = 'scale(1)'
+            })
+          })
+        } else {
+          item.style.opacity = '0'
+          item.style.transform = 'scale(0.96)'
+          setTimeout(() => item.classList.add('hidden'), 500)
+        }
+      })
     })
-  )
+  })
 })()
 
 /* ─── PORTFOLIO MODAL */
