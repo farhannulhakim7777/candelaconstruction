@@ -77,8 +77,8 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">Tentang</a></li>
         <li><a href="#services">Layanan</a></li>
-        <li><a href="#commitment">Komitmen</a></li>
         <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#commitment">Komitmen</a></li>
         <li><a href="#portfolio">Portofolio</a></li>
         <li><a href="#contact" class="nav-cta">Konsultasi</a></li>
       </ul>
@@ -110,8 +110,8 @@
             <p class="hero-eyebrow">CANDELA CONSTRUCTION | KONTRAKTOR | TANGERANG, INDONESIA</p>
 
             <h1 class="hero-headline">
-              <em>BUILD</em> FOR QUALITY,<br>
-              <em>BUILD</em> FOR LIFE.
+              <em>BUILD FOR</em> QUALITY,<br>
+              <em>BUILD FOR</em> LIFE.
             </h1>
 
             <div class="hero-actions hero-actions--grid">
@@ -204,7 +204,7 @@
           <!-- <div class="section-label">Tentang Candela</div> -->
           <h2 class="section-heading">Tentang Candela</h2>
 
-          <p class="about-lead">
+          <p class="about-text">
             Candela Construction adalah perusahaan Kontraktor yang didirikan di Tangerang pada September 2021, dengan
             fokus pada layanan arsitektur dan interior.
           </p>
@@ -221,7 +221,8 @@
 
           <p>
             Setiap proyek dikerjakan dengan ketelitian, integritas, dan inovasi untuk memastikan hasil terbaik di setiap
-            detail.
+            detail, serta didukung dengan garansi pekerjaan selama 1 tahun sebagai bentuk komitmen kami terhadap
+            kualitas dan kepuasan klien.
           </p>
           <div class="about-stats">
             <div class="stat">
@@ -376,6 +377,7 @@
 
   <section id="workflow" class="workflow-section">
     <div class="workflow-container">
+
       <!-- Header -->
       <div class="workflow-header">
         <span class="workflow-label">semua berawal dari cerita Anda</span>
@@ -383,12 +385,53 @@
         <p class="workflow-description">
           Kami percaya bahwa setiap proyek adalah perjalanan kolaboratif yang dimulai dari ide hingga menjadi kenyataan.
           Dengan pendekatan terstruktur dan perhatian terhadap detail, berikut adalah alur kerja kami untuk memastikan
-          setiap proyek berjalan lancar dan sesuai ekspektasi
+          setiap proyek berjalan lancar dan sesuai ekspektasi.
         </p>
       </div>
 
       <!-- Steps Grid -->
       <div class="workflow-steps">
+
+        <!-- ── Arrows (absolute, di luar flow step) ─────────────── -->
+
+        <!-- Row 1: Step 1 → 2 (kanan) -->
+        <svg class="workflow-arrow arrow-1-2" viewBox="0 0 100 60" preserveAspectRatio="none">
+          <path class="workflow-arrow-line" d="M 5 30 Q 30 8, 50 30 Q 70 52, 95 30" />
+          <polygon class="workflow-arrow-head" points="90,23 98,30 90,37" />
+        </svg>
+
+        <!-- Row 1: Step 2 → 3 (kanan) -->
+        <svg class="workflow-arrow arrow-2-3" viewBox="0 0 100 60" preserveAspectRatio="none">
+          <path class="workflow-arrow-line" d="M 5 30 Q 30 8, 50 30 Q 70 52, 95 30" />
+          <polygon class="workflow-arrow-head" points="90,23 98,30 90,37" />
+        </svg>
+
+        <!-- Connector: Step 3 → 4 (turun sisi kanan) -->
+        <svg class="workflow-arrow arrow-3-4" viewBox="0 0 56 80" preserveAspectRatio="none">
+          <path class="workflow-arrow-line" d="M 28 5 Q 52 20, 52 40 Q 52 62, 28 75" />
+          <polygon class="workflow-arrow-head" points="21,70 28,78 35,70" />
+        </svg>
+
+        <!-- Row 2: Step 4 → 5 (kiri) -->
+        <svg class="workflow-arrow arrow-4-5" viewBox="0 0 100 60" preserveAspectRatio="none">
+          <path class="workflow-arrow-line" d="M 95 30 Q 70 8, 50 30 Q 30 52, 5 30" />
+          <polygon class="workflow-arrow-head" points="10,23 2,30 10,37" />
+        </svg>
+
+        <!-- Row 2: Step 5 → 6 (kiri) -->
+        <svg class="workflow-arrow arrow-5-6" viewBox="0 0 100 60" preserveAspectRatio="none">
+          <path class="workflow-arrow-line" d="M 95 30 Q 70 8, 50 30 Q 30 52, 5 30" />
+          <polygon class="workflow-arrow-head" points="10,23 2,30 10,37" />
+        </svg>
+
+        <!-- Connector: Step 6 → 7 (turun sisi kiri) -->
+        <svg class="workflow-arrow arrow-6-7" viewBox="0 0 56 80" preserveAspectRatio="none">
+          <path class="workflow-arrow-line" d="M 28 5 Q 4 20, 4 40 Q 4 62, 28 75" />
+          <polygon class="workflow-arrow-head" points="21,70 28,78 35,70" />
+        </svg>
+
+        <!-- ── Steps ──────────────────────────────────────────────── -->
+
         <!-- Step 1 -->
         <div class="workflow-step">
           <span class="step-number">01</span>
@@ -403,12 +446,6 @@
           <p class="step-description">Diskusi untuk memahami kebutuhan, visi, dan tujuan proyek.</p>
         </div>
 
-        <!-- Arrow 1-2 -->
-        <svg class="workflow-arrow arrow-1-2" viewBox="0 0 100 50" preserveAspectRatio="none">
-          <path class="workflow-arrow-line" d="M 0 25 Q 25 5, 50 25 T 100 25" />
-          <polygon class="workflow-arrow-head" points="95,20 100,25 95,30" />
-        </svg>
-
         <!-- Step 2 -->
         <div class="workflow-step">
           <span class="step-number">02</span>
@@ -422,12 +459,6 @@
           <h3 class="step-title">Survei dan Pengukuran</h3>
           <p class="step-description">Survei lapangan dan pengukuran untuk data akurat dan presisi.</p>
         </div>
-
-        <!-- Arrow 2-3 -->
-        <svg class="workflow-arrow arrow-2-3" viewBox="0 0 100 50" preserveAspectRatio="none">
-          <path class="workflow-arrow-line" d="M 0 25 Q 25 5, 50 25 T 100 25" />
-          <polygon class="workflow-arrow-head" points="95,20 100,25 95,30" />
-        </svg>
 
         <!-- Step 3 -->
         <div class="workflow-step">
@@ -458,12 +489,6 @@
           <p class="step-description">Estimasi biaya proyek secara transparan dan terpercaya.</p>
         </div>
 
-        <!-- Arrow 4-5 -->
-        <svg class="workflow-arrow arrow-4-5" viewBox="0 0 100 50" preserveAspectRatio="none">
-          <path class="workflow-arrow-line" d="M 100 25 Q 75 45, 50 25 T 0 25" />
-          <polygon class="workflow-arrow-head" points="5,20 0,25 5,30" />
-        </svg>
-
         <!-- Step 5 -->
         <div class="workflow-step">
           <span class="step-number">05</span>
@@ -478,12 +503,6 @@
           <p class="step-description">Eksekusi pembangunan sesuai desain dan standar kualitas.</p>
         </div>
 
-        <!-- Arrow 5-6 -->
-        <svg class="workflow-arrow arrow-5-6" viewBox="0 0 100 50" preserveAspectRatio="none">
-          <path class="workflow-arrow-line" d="M 0 25 Q 25 45, 50 25 T 100 25" />
-          <polygon class="workflow-arrow-head" points="95,20 100,25 95,30" />
-        </svg>
-
         <!-- Step 6 -->
         <div class="workflow-step">
           <span class="step-number">06</span>
@@ -497,8 +516,24 @@
           <h3 class="step-title">Serah Terima</h3>
           <p class="step-description">Pengecekan akhir dan penyerahan proyek yang siap digunakan.</p>
         </div>
-      </div>
-    </div>
+
+        <!-- Step 7 -->
+        <div class="workflow-step">
+          <span class="step-number">07</span>
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 6L28 14H38L30 20L33 30L24 24L15 30L18 20L10 14H20L24 6Z" stroke="currentColor"
+                stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M24 26v10M20 40h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="step-title">Garansi 1 Tahun</h3>
+          <p class="step-description">Proyek selesai bukan berarti kami pergi, kami memberikan garansi penuh selama 1
+            tahun untuk memastikan semua tetap berjalan sempurna.</p>
+        </div>
+
+      </div><!-- /workflow-steps -->
+    </div><!-- /workflow-container -->
   </section>
 
 
@@ -513,7 +548,7 @@
         <div class="commitment-text reveal">
           <div class="section-label">Standar & Keselamatan</div>
           <h2 class="section-heading">Komitmen Kami<br /></h2>
-          <p>Kesehatan, Keselamatan, dan Lingkungan bukan sekadar formalitas kepatuhan di Candela - ini adalah nilai
+          <p>Kesehatan, Keselamatan, dan Lingkungan bukan sekadar formalitas kepatuhan, di Candela ini adalah nilai
             inti yang tertanam dalam setiap tindakan di setiap proyek.</p>
           <p>Seluruh proyek Candela dirancang dan dilaksanakan sesuai <strong>SNI (Standar Nasional Indonesia)</strong>.
           </p>
@@ -791,7 +826,7 @@
       <div class="contact-grid">
         <div class="contact-info reveal">
           <h2 class="section-heading"><br /><em>Proyek Anda.</em></h2>
-          <p>Konsultasikan proyek anda berikan visi anda untuk proyek anda, kami akan merespons anda secepatnya.</p>
+          <p>Konsultasikan proyek anda berikan visi anda untuk proyek anda, kami akan merespons anda secepatnya, gratis.</p>
           <div class="contact-details">
 
             <!-- WhatsApp -->
