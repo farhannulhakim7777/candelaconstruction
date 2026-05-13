@@ -1,315 +1,481 @@
-:root {
-  --gold: #d4af37;
-  --dark-bg: #0a0a0a;
-  --light-text: #ffffff;
-  --gray-text: #999999;
-  --border-gray: #333333;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700;900&family=DM+Sans:wght@300;400;500&display=swap");
+
+/* ─────────────────────────────────────────
+   BASE RESET
+───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* ─── Section ─────────────────────────────────── */
+/* ─────────────────────────────────────────
+   WORKFLOW SECTION
+───────────────────────────────────────── */
 .workflow-section {
-  padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px);
-  background: var(--dark-bg);
   position: relative;
+  scroll-margin-top: 120px;
+  background: #0a0a0a;
 }
 
-.workflow-container {
+/* ─────────────────────────────────────────
+   WRAPPER
+───────────────────────────────────────── */
+.wf {
+  padding: 48px 20px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.wf-inner {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
-/* ─── Header ──────────────────────────────────── */
-.workflow-header {
-  margin-bottom: clamp(60px, 8vw, 100px);
-  text-align: left;
-}
+/* ─────────────────────────────────────────
+   HEADER
+───────────────────────────────────────── */
+.wf-label {
+  display: block;
+  margin-bottom: 14px;
 
-.workflow-label {
-  font-size: clamp(14px, 2.5vw, 20px);
+  color: #d4af37;
+  text-transform: uppercase;
+
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 4px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  display: block;
 }
 
-.workflow-title {
+.wf-title {
+  margin-bottom: 16px;
+
+  color: #fff;
+  line-height: 1.1;
+
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(48px, 10vw, 80px);
+  font-size: clamp(36px, 10vw, 80px);
   font-weight: 900;
-  margin-bottom: 32px;
-  letter-spacing: -0.5px;
-  line-height: 1.15;
-  color: var(--light-text);
 }
 
-.workflow-description {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(16px, 1.8vw, 20px);
-  font-weight: 300;
-  color: var(--gray-text);
-  max-width: 800px;
+.wf-desc {
+  max-width: 760px;
+  margin-bottom: 48px;
+
+  color: #888;
   line-height: 2;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(14px, 4vw, 18px);
+  font-weight: 300;
 }
 
-/* ─── Steps Grid ──────────────────────────────── */
-.workflow-steps {
+/* ─────────────────────────────────────────
+   MOBILE GRID
+───────────────────────────────────────── */
+.wf-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
-  margin-top: clamp(60px, 8vw, 100px);
+  gap: 0;
+}
+
+/* desktop rows hidden by default */
+.wf-row,
+.wf-spacer,
+.arrow-track {
+  display: none;
+}
+
+/* ─────────────────────────────────────────
+   STEP
+───────────────────────────────────────── */
+.wf-step {
   position: relative;
-}
 
-@media (min-width: 769px) {
-  .workflow-steps {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto auto;
-    column-gap: 0;
-    row-gap: 80px;
-  }
-}
-
-/* ─── Step Card ───────────────────────────────── */
-.workflow-step {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  animation: fadeInUp 0.8s ease-out forwards;
+  align-items: flex-start;
+  gap: 16px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #1a1a1a;
+
   opacity: 0;
+  animation: fadeUp 0.6s ease-out forwards;
 }
 
-.workflow-step:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.workflow-step:nth-child(3) {
-  animation-delay: 0.2s;
-}
-.workflow-step:nth-child(5) {
-  animation-delay: 0.3s;
-}
-.workflow-step:nth-child(7) {
-  animation-delay: 0.4s;
-}
-.workflow-step:nth-child(9) {
-  animation-delay: 0.5s;
-}
-.workflow-step:nth-child(11) {
-  animation-delay: 0.6s;
-}
-.workflow-step:nth-child(13) {
-  animation-delay: 0.7s;
+.wf-step:last-child {
+  border-bottom: none;
 }
 
-@keyframes fadeInUp {
+/* connector line */
+.wf-step:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  left: 22px;
+  bottom: 0;
+
+  width: 1px;
+  height: 20px;
+
+  background: linear-gradient(
+    to bottom,
+    #222 0%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+}
+
+/* stagger */
+.wf-step:nth-child(1) { animation-delay: 0.05s; }
+.wf-step:nth-child(2) { animation-delay: 0.12s; }
+.wf-step:nth-child(3) { animation-delay: 0.19s; }
+.wf-step:nth-child(4) { animation-delay: 0.26s; }
+.wf-step:nth-child(5) { animation-delay: 0.33s; }
+.wf-step:nth-child(6) { animation-delay: 0.40s; }
+.wf-step:nth-child(7) { animation-delay: 0.47s; }
+
+/* ─────────────────────────────────────────
+   ANIMATION
+───────────────────────────────────────── */
+@keyframes fadeUp {
+
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Step 7: tengah di baris ketiga */
-@media (min-width: 769px) {
-  .workflow-step:last-of-type {
-    grid-column: 2;
-  }
+/* ─────────────────────────────────────────
+   STEP LEFT
+───────────────────────────────────────── */
+.step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex-shrink: 0;
+  width: 44px;
 }
 
-/* ─── Step Number ─────────────────────────────── */
-.step-number {
+.step-num {
+  margin-bottom: 8px;
+
+  color: #444;
+
   font-family: "DM Sans", sans-serif;
-  font-size: clamp(24px, 4vw, 32px);
-  font-weight: 400;
-  color: var(--gray-text);
-  margin-bottom: 24px;
-  letter-spacing: 0.5px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-/* ─── Step Icon ───────────────────────────────── */
 .step-icon {
-  width: clamp(56px, 10vw, 80px);
-  height: clamp(56px, 10vw, 80px);
-  margin-bottom: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
+
+  width: 44px;
+  height: 44px;
+
+  color: #d4af37;
+
+  background: rgba(212, 175, 55, 0.06);
+
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 12px;
 }
 
 .step-icon svg {
-  width: 100%;
-  height: 100%;
+  width: 22px;
+  height: 22px;
+
   stroke: currentColor;
   fill: none;
   stroke-width: 1.5;
 }
 
-/* ─── Step Title ──────────────────────────────── */
+/* ─────────────────────────────────────────
+   STEP BODY
+───────────────────────────────────────── */
+.step-body {
+  flex: 1;
+  padding-top: 2px;
+}
+
 .step-title {
+  margin-bottom: 6px;
+
+  color: #fff;
+  line-height: 1.2;
+
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(19px, 3vw, 24px);
+  font-size: clamp(17px, 4.5vw, 22px);
   font-weight: 400;
-  margin-bottom: 16px;
-  color: var(--light-text);
 }
 
-/* ─── Step Description ────────────────────────── */
-.step-description {
-  font-family: "DM Sans", sans-serif;
-  font-size: clamp(14px, 1.4vw, 16px);
+.step-desc {
+  margin-bottom: 8px;
+
+  color: #666;
+  line-height: 1.8;
+
+  font-size: clamp(12px, 3vw, 13px);
   font-weight: 400;
-  color: var(--gray-text);
-  line-height: 1.9;
-  max-width: 220px;
 }
 
-/* ─── Arrow Connectors ────────────────────────── */
-.workflow-arrow {
-  display: none;
-  pointer-events: none;
+.step-badge {
+  display: inline-block;
+
+  padding: 3px 10px;
+
+  color: #d4af37;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 100px;
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
 }
 
-@media (min-width: 769px) {
-  .workflow-arrow {
-    display: block;
-    position: absolute;
-    overflow: visible;
+/* ─────────────────────────────────────────
+   TABLET
+───────────────────────────────────────── */
+@media (min-width: 600px) {
+
+  .wf {
+    padding: 64px 32px;
   }
 
-  /* ── Row 1: step 1→2→3 (kiri ke kanan) ── */
-  .arrow-1-2 {
-    top: 90px;
-    left: calc(33.33% - 10px);
-    width: calc(33.33% - 20px);
-    height: 60px;
+  .wf-desc {
+    margin-bottom: 56px;
   }
 
-  .arrow-2-3 {
-    top: 90px;
-    left: calc(66.66% - 10px);
-    width: calc(33.33% - 20px);
-    height: 60px;
+  .wf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+
+    background: #161616;
+
+    border: 1px solid #161616;
+    border-radius: 2px;
   }
 
-  /* ── Connector 3→4: turun di sisi kanan ── */
-  .arrow-3-4 {
-    top: calc(50% - 110px);
-    right: calc(16.66% - 28px);
-    width: 56px;
-    height: 80px;
-    left: auto;
+  .wf-step {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0;
+
+    padding: 36px 24px;
+
+    text-align: center;
+
+    background: #0a0a0a;
+    border-bottom: none;
   }
 
-  /* ── Row 2: step 4→5→6 (kanan ke kiri) ── */
-  .arrow-4-5 {
-    bottom: 200px;
-    left: calc(33.33% - 10px);
-    width: calc(33.33% - 20px);
-    height: 60px;
+  .wf-step::after {
+    display: none;
   }
 
-  .arrow-5-6 {
-    bottom: 200px;
-    left: 0px;
-    width: calc(33.33% - 20px);
-    height: 60px;
+  .step-left {
+    width: auto;
+    margin-bottom: 14px;
   }
 
-  /* ── Connector 6→7: turun di sisi kiri ── */
-  .arrow-6-7 {
-    bottom: 50px;
-    left: calc(16.66% - 28px);
-    width: 56px;
-    height: 80px;
-  }
-}
+  .step-num {
+    order: -1;
 
-/* ─── Arrow SVG Styles ────────────────────────── */
-.workflow-arrow-line {
-  stroke: var(--gold);
-  stroke-width: 1.5;
-  stroke-dasharray: 6 5;
-  fill: none;
-  opacity: 0.45;
-}
+    margin-bottom: 10px;
 
-.workflow-arrow-head {
-  fill: var(--gold);
-  stroke: none;
-  opacity: 0.45;
-}
-
-/* ─── Responsive ──────────────────────────────── */
-@media (max-width: 768px) {
-  .workflow-section {
-    padding: 50px 16px;
-  }
-
-  .workflow-header {
-    margin-bottom: 50px;
-  }
-
-  .workflow-title {
-    font-size: 36px;
-  }
-
-  .workflow-description {
-    font-size: 14px;
-    line-height: 1.85;
+    font-size: 12px;
   }
 
   .step-icon {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
+
+    border-radius: 16px;
+  }
+
+  .step-body {
+    padding-top: 0;
+  }
+
+  .step-desc {
+    max-width: 200px;
+    margin-inline: auto;
+  }
+}
+
+/* ─────────────────────────────────────────
+   DESKTOP
+───────────────────────────────────────── */
+@media (min-width: 960px) {
+
+  .wf {
+    padding:
+      clamp(60px, 10vw, 100px)
+      clamp(32px, 5vw, 60px);
+  }
+
+  .wf-desc {
+    margin-bottom: clamp(60px, 8vw, 100px);
+  }
+
+  /* mobile grid hidden */
+  .wf-grid {
+    display: none;
+  }
+
+  /* desktop rows */
+  .wf-row {
+    position: relative;
+
+    display: grid;
+    gap: 0;
+  }
+
+  .wf-row-top {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 64px;
+  }
+
+  .wf-row-bot {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .wf-spacer {
+    display: block;
+  }
+
+  /* arrow */
+  .arrow-track {
+    display: block;
+
+    position: absolute;
+    inset: 0 auto auto 0;
+
+    width: 100%;
+
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  /* desktop card */
+  .wf-row .wf-step {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0;
+
+    padding: 72px 12px 0;
+
+    text-align: center;
+
+    background: none;
+    border-bottom: none;
+  }
+
+  .wf-row .wf-step::after {
+    display: none;
+  }
+
+  /* desktop stagger */
+  .wf-row-top .wf-step:nth-child(2) {
+    animation-delay: 0.05s;
+  }
+
+  .wf-row-top .wf-step:nth-child(3) {
+    animation-delay: 0.12s;
+  }
+
+  .wf-row-top .wf-step:nth-child(4) {
+    animation-delay: 0.19s;
+  }
+
+  .wf-row-top .wf-step:nth-child(5) {
+    animation-delay: 0.26s;
+  }
+
+  .wf-row-bot .wf-step:nth-child(2) {
+    animation-delay: 0.40s;
+  }
+
+  .wf-row-bot .wf-step:nth-child(3) {
+    animation-delay: 0.48s;
+  }
+
+  .wf-row-bot .wf-step:nth-child(4) {
+    animation-delay: 0.56s;
+  }
+
+  /* left */
+  .wf-row .step-left {
+    width: auto;
+
+    margin-bottom: 0;
+  }
+
+  .wf-row .step-num {
+    order: -1;
+
+    margin-bottom: 16px;
+
+    font-size: clamp(20px, 2.5vw, 28px);
+  }
+
+  .wf-row .step-icon {
+    width: clamp(48px, 7vw, 64px);
+    height: clamp(48px, 7vw, 64px);
+
     margin-bottom: 20px;
+
+    background: transparent;
+    border: none;
+    border-radius: 18px;
   }
 
-  .step-number {
-    font-size: 24px;
+  .wf-row .step-icon svg {
+    width: 100%;
+    height: 100%;
   }
 
-  .step-title {
-    font-size: 17px;
+  /* body */
+  .wf-row .step-body {
+    padding-top: 0;
   }
 
-  .step-description {
-    font-size: 12px;
-    max-width: 160px;
-  }
-}
+  .wf-row .step-title {
+    margin-bottom: 10px;
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .workflow-section {
-    padding: 60px 40px;
+    font-size: clamp(16px, 1.8vw, 21px);
   }
 
-  .step-title {
-    font-size: 19px;
+  .wf-row .step-desc {
+    max-width: 190px;
+
+    margin-inline: auto;
+
+    font-size: clamp(11px, 1.1vw, 13px);
   }
 
-  .step-description {
-    font-size: 13px;
-  }
+  .wf-row .step-badge {
+    margin-top: 12px;
 
-  .arrow-4-5,
-  .arrow-5-6 {
-    bottom: 180px;
-  }
-}
+    padding: 4px 14px;
 
-@media (min-width: 1025px) {
-  .workflow-section {
-    padding: 80px 60px;
-  }
-
-  .workflow-steps {
-    row-gap: 100px;
+    font-size: 10px;
   }
 }

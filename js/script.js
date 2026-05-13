@@ -66,45 +66,88 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
   updateActive()
 })()
 
-/* ─── HERO SLIDER */
+/* ─────────────────────────────────────────
+   HERO SLIDER
+───────────────────────────────────────── */
 ;(function () {
   const slides = qsa('.hero-media-slide')
   const dotsWrap = qs('#heroMediaDots')
+
   if (!slides.length || !dotsWrap) return
 
   let idx = 0
+  let autoSlide
 
-  slides.forEach(s => {
-    const img = qs('img', s)
-    if (img?.src) new Image().src = img.src
+  /* preload images */
+  slides.forEach(slide => {
+    const img = qs('img', slide)
+
+    if (img?.src) {
+      const preload = new Image()
+      preload.src = img.src
+    }
   })
 
+  /* build dots */
   const buildDots = () => {
     dotsWrap.innerHTML = ''
+
     slides.forEach((_, i) => {
-      const d = Object.assign(document.createElement('span'), {
-        className: 'hero-media-dot' + (i === idx ? ' active' : ''),
-        style: 'cursor:pointer'
+      const dot = document.createElement('span')
+
+      dot.className = 'hero-media-dot' + (i === idx ? ' active' : '')
+
+      dot.style.cursor = 'pointer'
+
+      dot.addEventListener('click', () => {
+        goTo(i)
+        restartAuto()
       })
-      d.addEventListener('click', () => goTo(i))
-      dotsWrap.appendChild(d)
+
+      dotsWrap.appendChild(dot)
     })
   }
 
+  /* go to slide */
   const goTo = n => {
     slides[idx].classList.remove('active')
+
     idx = (n + slides.length) % slides.length
+
     slides[idx].classList.add('active')
-    ;[...dotsWrap.children].forEach((d, i) =>
-      d.classList.toggle('active', i === idx)
-    )
+    ;[...dotsWrap.children].forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx)
+    })
   }
 
-  qs('.hero-media-nav.prev')?.addEventListener('click', () => goTo(idx - 1))
-  qs('.hero-media-nav.next')?.addEventListener('click', () => goTo(idx + 1))
+  /* start auto slider */
+  const startAuto = () => {
+    autoSlide = setInterval(() => {
+      goTo(idx + 1)
+    }, 3000)
+  }
 
+  /* restart auto slider */
+  const restartAuto = () => {
+    clearInterval(autoSlide)
+    startAuto()
+  }
+
+  /* navigation buttons */
+  qs('.hero-media-nav.prev')?.addEventListener('click', () => {
+    goTo(idx - 1)
+    restartAuto()
+  })
+
+  qs('.hero-media-nav.next')?.addEventListener('click', () => {
+    goTo(idx + 1)
+    restartAuto()
+  })
+
+  /* init */
   buildDots()
   goTo(0)
+  startAuto()
 })()
 
 /* ─── REVEAL ON SCROLL */
