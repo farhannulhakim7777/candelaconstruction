@@ -17,10 +17,18 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Candela Construction - Konstruksi & Renovasi Profesional">
-  <meta property="og:url">
+  <meta property="og:url" content="https://candelakonstruksi.com">
   <meta property="og:description"
     content="Firma Design & Build dengan komitmen Zero Accident dan standar SNI. Lihat portofolio proyek kami.">
-  <meta property="og:image" content="/interior/newint/int4.png">
+  <meta property="og:image" content="https://candelakonstruksi.com/logo/logonew.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Candela Construction - Konstruksi & Renovasi Profesional">
+  <meta name="twitter:description" content="Firma Design & Build dengan komitmen Zero Accident dan standar SNI. Lihat portofolio proyek kami.">
+  <meta name="twitter:image" content="https://candelakonstruksi.com/logo/logonew.png">
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -63,6 +71,8 @@
       transform: translateZ(0);
     }
   </style>
+  <!-- Preload hanya slide pertama -->
+  <link rel="preload" as="image" href="/interior/newint/int4.webp" fetchpriority="high" />
 </head>
 
 <body>
@@ -126,28 +136,25 @@
           <aside class="hero-panel hero-panel--media hero-card" aria-label="Galeri proyek Candela">
             <div class="hero-media">
               <div class="hero-media-slide active">
-                <img src="/interior/newint/int4.png" alt="Proyek konstruksi – struktur" loading="eager" decoding="sync"
-                  fetchpriority="high" />
+                <img src="/interior/newint/int4.webp" alt="Proyek konstruksi – struktur" width="800" height="600"
+                  loading="eager" decoding="sync" fetchpriority="high" />
               </div>
               <div class="hero-media-slide">
-                <img src="/interior/newint/int10.jpg" alt="Proyek arsitektur – fasad modern" loading="eager"
-                  decoding="sync" fetchpriority="high" />
+                <img src="/interior/newint/int10.webp" alt="Proyek arsitektur – fasad modern" width="800" height="600"
+                  loading="lazy" decoding="async" fetchpriority="low" />
               </div>
               <div class="hero-media-slide">
-                <img src="/interior/newint/int2.png" alt="Bangunan komersial – detail urban" loading="eager"
-                  decoding="sync" fetchpriority="high" />
+                <img src="/interior/newint/int2.webp" alt="Bangunan komersial – detail urban" width="800" height="600"
+                  loading="lazy" decoding="async" fetchpriority="low" />
+              </div>
+
+              <div class="hero-media-slide">
+                <img src="/interior/newint/int7.webp" alt="Proyek interior – ruang makan" width="800" height="600"
+                  loading="lazy" decoding="async" fetchpriority="low" />
               </div>
               <div class="hero-media-slide">
-                <img src="/interior/newint/int5.png" alt="Proyek interior – ruang tamu" loading="eager" decoding="sync"
-                  fetchpriority="high" />
-              </div>
-              <div class="hero-media-slide">
-                <img src="/interior/newint/int7.png" alt="Proyek interior – ruang makan" loading="eager" decoding="sync"
-                  fetchpriority="high" />
-              </div>
-              <div class="hero-media-slide">
-                <img src="/interior/newint/int9.png" alt="Proyek interior – kamar tidur" loading="eager" decoding="sync"
-                  fetchpriority="high" />
+                <img src="/interior/newint/int9.webp" alt="Proyek interior – kamar tidur" width="800" height="600"
+                  loading="lazy" decoding="async" fetchpriority="low" />
               </div>
             </div>
 
@@ -243,858 +250,675 @@
     </div>
   </section>
 
- <section id="services" class="section section-dark">
-  <div class="container">
+  <section id="services" class="section section-dark">
+    <div class="container">
 
-    <div class="section-header reveal">
-      <div class="section-label light">
-        Yang Kami Kerjakan
+      <div class="section-header reveal">
+        <div class="section-label light">
+          Yang Kami Kerjakan
+        </div>
+
+        <h2 class="section-heading light">
+          Layanan Inti<br />
+          <em>Kami.</em>
+        </h2>
       </div>
 
-      <h2 class="section-heading light">
-        Layanan Inti<br />
-        <em>Kami.</em>
-      </h2>
-    </div>
+      <div class="services-grid">
 
-    <div class="services-grid">
-
-      <!-- =========================================================
+        <!-- =========================================================
            01 — KONTRAKTOR
       ========================================================= -->
-      <div class="service-card reveal" data-index="01">
+        <div class="service-card reveal" data-index="01">
 
-        <div class="card-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path
-              d="M6 42V20L24 6l18 14v22H30V30h-12v12H6z"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M6 42V20L24 6l18 14v22H30V30h-12v12H6z" stroke="currentColor" stroke-width="2"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
 
-        <div class="card-num">01</div>
+          <div class="card-num">01</div>
 
-        <h3>Kontraktor</h3>
+          <h3>Kontraktor</h3>
 
-        <p class="card-brief">
-          Manajemen konstruksi komprehensif dari tahap awal hingga penyelesaian proyek.
-        </p>
-
-        <div class="card-detail">
-
-          <p>
-            Kami menghadirkan solusi pembangunan yang terintegrasi dengan pengawasan ketat terhadap kualitas,
-            kepatuhan jadwal, serta optimalisasi anggaran untuk proyek hunian maupun komersial.
+          <p class="card-brief">
+            Manajemen konstruksi komprehensif dari tahap awal hingga penyelesaian proyek.
           </p>
 
-          <ul>
-            <li>Pembangunan Hunian & Komersial</li>
-            <li>Manajemen Proyek</li>
-            <li>Pengawasan Lapangan</li>
-            <li>Koordinasi Subkontraktor</li>
-          </ul>
+          <div class="card-detail">
+
+            <p>
+              Kami menghadirkan solusi pembangunan yang terintegrasi dengan pengawasan ketat terhadap kualitas,
+              kepatuhan jadwal, serta optimalisasi anggaran untuk proyek hunian maupun komersial.
+            </p>
+
+            <ul>
+              <li>Pembangunan Hunian & Komersial</li>
+              <li>Manajemen Proyek</li>
+              <li>Pengawasan Lapangan</li>
+              <li>Koordinasi Subkontraktor</li>
+            </ul>
+
+          </div>
+
+          <div class="card-arrow">→</div>
 
         </div>
 
-        <div class="card-arrow">→</div>
-
-      </div>
-
-      <!-- =========================================================
+        <!-- =========================================================
            02 — DESAIN
       ========================================================= -->
-      <div class="service-card reveal delay-1" data-index="02">
+        <div class="service-card reveal delay-1" data-index="02">
 
-        <div class="card-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path
-              d="M8 40V14l16-8 16 8v26"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linejoin="round"
-            />
-            <rect
-              x="18"
-              y="28"
-              width="12"
-              height="12"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-            <path
-              d="M8 22h32M8 30h10M30 30h10"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M8 40V14l16-8 16 8v26" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <rect x="18" y="28" width="12" height="12" stroke="currentColor" stroke-width="2" />
+              <path d="M8 22h32M8 30h10M30 30h10" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
 
-        <div class="card-num">02</div>
+          <div class="card-num">02</div>
 
-        <h3>Desain Arsitektur</h3>
+          <h3>Desain Arsitektur</h3>
 
-        <p class="card-brief">
-          Perencanaan arsitektur komprehensif yang mengintegrasikan fungsi, estetika, dan efisiensi ruang.
-        </p>
-
-        <div class="card-detail">
-
-          <p>
-            Kami merancang setiap detail mulai dari konsep fasad hingga tata ruang interior secara presisi,
-            menghasilkan desain yang selaras dengan kebutuhan klien, standar teknis, serta nilai estetika jangka panjang.
+          <p class="card-brief">
+            Perencanaan arsitektur komprehensif yang mengintegrasikan fungsi, estetika, dan efisiensi ruang.
           </p>
 
-          <ul>
-            <li>Desain Konseptual & Skematik</li>
-            <li>Pengembangan Desain</li>
-            <li>Dokumentasi Konstruksi</li>
-            <li>Bantuan Perizinan & Regulasi</li>
-          </ul>
+          <div class="card-detail">
+
+            <p>
+              Kami merancang setiap detail mulai dari konsep fasad hingga tata ruang interior secara presisi,
+              menghasilkan desain yang selaras dengan kebutuhan klien, standar teknis, serta nilai estetika jangka
+              panjang.
+            </p>
+
+            <ul>
+              <li>Desain Konseptual & Skematik</li>
+              <li>Pengembangan Desain</li>
+              <li>Dokumentasi Konstruksi</li>
+              <li>Bantuan Perizinan & Regulasi</li>
+            </ul>
+
+          </div>
+
+          <div class="card-arrow">→</div>
 
         </div>
 
-        <div class="card-arrow">→</div>
-
-      </div>
-
-      <!-- =========================================================
+        <!-- =========================================================
            03 — INTERIOR
       ========================================================= -->
-      <div class="service-card reveal delay-2" data-index="03">
+        <div class="service-card reveal delay-2" data-index="03">
 
-        <div class="card-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <rect
-              x="6"
-              y="6"
-              width="36"
-              height="36"
-              rx="2"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-            <path
-              d="M6 18h36M18 18v24"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="6" width="36" height="36" rx="2" stroke="currentColor" stroke-width="2" />
+              <path d="M6 18h36M18 18v24" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
 
-        <div class="card-num">03</div>
+          <div class="card-num">03</div>
 
-        <h3>Interior &amp; Eksterior</h3>
+          <h3>Interior &amp; Eksterior</h3>
 
-        <p class="card-brief">
-          Perancangan ruang dalam dan luar yang menyatu secara visual dan fungsional.
-        </p>
-
-        <div class="card-detail">
-
-          <p>
-            Kami mengolah elemen interior dan eksterior sebagai satu kesatuan desain,
-            menciptakan pengalaman ruang yang nyaman, estetis, serta memberikan kesan kuat sejak pandangan pertama.
+          <p class="card-brief">
+            Perancangan ruang dalam dan luar yang menyatu secara visual dan fungsional.
           </p>
 
-          <ul>
-            <li>Perencanaan Ruang Interior</li>
-            <li>Spesifikasi Material & Finishing</li>
-            <li>Desain Fasad & Lanskap</li>
-            <li>Koordinasi Furnitur & Fixture</li>
-          </ul>
+          <div class="card-detail">
+
+            <p>
+              Kami mengolah elemen interior dan eksterior sebagai satu kesatuan desain,
+              menciptakan pengalaman ruang yang nyaman, estetis, serta memberikan kesan kuat sejak pandangan pertama.
+            </p>
+
+            <ul>
+              <li>Perencanaan Ruang Interior</li>
+              <li>Spesifikasi Material & Finishing</li>
+              <li>Desain Fasad & Lanskap</li>
+              <li>Koordinasi Furnitur & Fixture</li>
+            </ul>
+
+          </div>
+
+          <div class="card-arrow">→</div>
 
         </div>
 
-        <div class="card-arrow">→</div>
-
-      </div>
-
-      <!-- =========================================================
+        <!-- =========================================================
            04 — SISTEM MEP
       ========================================================= -->
-      <div class="service-card reveal delay-3" data-index="04">
+        <div class="service-card reveal delay-3" data-index="04">
 
-        <div class="card-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <circle
-              cx="24"
-              cy="24"
-              r="6"
-              stroke="currentColor"
-              stroke-width="2"
-            />
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2" />
 
-            <path
-              d="M24 4v6M24 38v6M4 24h6M38 24h6M9.4 9.4l4.2 4.2M34.4 34.4l4.2 4.2M34.4 9.4l-4.2 4.2M9.4 38.6l4.2-4.2"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </div>
+              <path
+                d="M24 4v6M24 38v6M4 24h6M38 24h6M9.4 9.4l4.2 4.2M34.4 34.4l4.2 4.2M34.4 9.4l-4.2 4.2M9.4 38.6l4.2-4.2"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
 
-        <div class="card-num">04</div>
+          <div class="card-num">04</div>
 
-        <h3>Sistem MEP</h3>
+          <h3>Sistem MEP</h3>
 
-        <p class="card-brief">
-          Integrasi sistem mekanikal, elektrikal, dan perpipaan yang efisien dan andal.
-        </p>
-
-        <div class="card-detail">
-
-          <p>
-            Tim spesialis kami memastikan seluruh sistem bangunan bekerja secara optimal,
-            mendukung kenyamanan, keamanan, serta kinerja operasional jangka panjang.
+          <p class="card-brief">
+            Integrasi sistem mekanikal, elektrikal, dan perpipaan yang efisien dan andal.
           </p>
 
-          <ul>
-            <li>Desain HVAC & Ventilasi</li>
-            <li>Integrasi Sistem Kelistrikan</li>
-            <li>Plumbing & Drainase</li>
-            <li>Sistem Proteksi Kebakaran</li>
-          </ul>
+          <div class="card-detail">
+
+            <p>
+              Tim spesialis kami memastikan seluruh sistem bangunan bekerja secara optimal,
+              mendukung kenyamanan, keamanan, serta kinerja operasional jangka panjang.
+            </p>
+
+            <ul>
+              <li>Desain HVAC & Ventilasi</li>
+              <li>Integrasi Sistem Kelistrikan</li>
+              <li>Plumbing & Drainase</li>
+              <li>Sistem Proteksi Kebakaran</li>
+            </ul>
+
+          </div>
+
+          <div class="card-arrow">→</div>
 
         </div>
 
-        <div class="card-arrow">→</div>
-
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 
 
 
-<!-- =========================================================
+  <!-- =========================================================
      WORKFLOW SECTION
 ========================================================= -->
-<section id="workflow" class="workflow-section">
+  <section id="workflow" class="workflow-section">
 
-  <div class="wf">
-    <div class="wf-inner">
+    <div class="wf">
+      <div class="wf-inner">
 
-      <!-- =========================================================
+        <!-- =========================================================
            HEADER
       ========================================================= -->
-      <span class="wf-label">
-        semua berawal dari cerita Anda
-      </span>
+        <span class="wf-label">
+          semua berawal dari cerita Anda
+        </span>
 
-      <h2 class="wf-title">
-        Workflow
-      </h2>
+        <h2 class="wf-title">
+          Workflow
+        </h2>
 
-      <p class="wf-desc">
-        Kami percaya bahwa setiap proyek adalah perjalanan kolaboratif
-        yang dimulai dari ide hingga menjadi kenyataan. Dengan pendekatan
-        terstruktur dan perhatian terhadap detail, berikut adalah alur kerja
-        kami untuk memastikan setiap proyek berjalan lancar dan sesuai ekspektasi.
-      </p>
+        <p class="wf-desc">
+          Kami percaya bahwa setiap proyek adalah perjalanan kolaboratif
+          yang dimulai dari ide hingga menjadi kenyataan. Dengan pendekatan
+          terstruktur dan perhatian terhadap detail, berikut adalah alur kerja
+          kami untuk memastikan setiap proyek berjalan lancar dan sesuai ekspektasi.
+        </p>
 
-      <!-- =========================================================
+        <!-- =========================================================
            MOBILE + TABLET VERSION
            (visible < 960px)
       ========================================================= -->
-      <div class="wf-grid">
+        <div class="wf-grid">
 
-        <!-- STEP 01 -->
-        <div class="wf-step">
+          <!-- STEP 01 -->
+          <div class="wf-step">
 
-          <div class="step-left">
+            <div class="step-left">
 
-            <span class="step-num">01</span>
+              <span class="step-num">01</span>
 
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="16" r="6"
-                  stroke="currentColor" stroke-width="1.5"/>
-                <path
-                  d="M12 32c0-6.6 5.4-12 12-12s12 5.4 12 12v4H12v-4z"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-                <path
-                  d="M18 28v6M30 28v6"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M12 32c0-6.6 5.4-12 12-12s12 5.4 12 12v4H12v-4z" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M18 28v6M30 28v6" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Konsultasi Awal
+              </h3>
+
+              <p class="step-desc">
+                Diskusi untuk memahami kebutuhan,
+                visi, dan tujuan proyek.
+              </p>
+
             </div>
 
           </div>
 
-          <div class="step-body">
+          <!-- STEP 02 -->
+          <div class="wf-step">
 
-            <h3 class="step-title">
-              Konsultasi Awal
-            </h3>
+            <div class="step-left">
 
-            <p class="step-desc">
-              Diskusi untuk memahami kebutuhan,
-              visi, dan tujuan proyek.
-            </p>
+              <span class="step-num">02</span>
+
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="10" y="14" width="28" height="20" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M14 14v-2a4 4 0 014-4h8a4 4 0 014 4v2" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M16 24h16M16 30h16" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Survei &amp; Pengukuran
+              </h3>
+
+              <p class="step-desc">
+                Survei lapangan dan pengukuran
+                untuk data akurat dan presisi.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- STEP 03 -->
+          <div class="wf-step">
+
+            <div class="step-left">
+
+              <span class="step-num">03</span>
+
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M12 24l6-6 12 12 6-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Pengembangan Desain
+              </h3>
+
+              <p class="step-desc">
+                Dari konsep awal hingga gambar teknis
+                dan detail konstruksi.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- STEP 04 -->
+          <div class="wf-step">
+
+            <div class="step-left">
+
+              <span class="step-num">04</span>
+
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path d="M24 8v32M8 24h32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Penyusunan Anggaran
+              </h3>
+
+              <p class="step-desc">
+                Estimasi biaya secara transparan
+                dan terpercaya.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- STEP 05 -->
+          <div class="wf-step">
+
+            <div class="step-left">
+
+              <span class="step-num">05</span>
+
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="8" y="12" width="32" height="28" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Konstruksi
+              </h3>
+
+              <p class="step-desc">
+                Eksekusi pembangunan sesuai desain
+                dan standar kualitas terbaik.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- STEP 06 -->
+          <div class="wf-step">
+
+            <div class="step-left">
+
+              <span class="step-num">06</span>
+
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="10" y="8" width="28" height="32" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M14 16h20M14 24h20M14 32h16" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Serah Terima
+              </h3>
+
+              <p class="step-desc">
+                Pengecekan akhir dan penyerahan proyek
+                yang siap digunakan.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- STEP 07 -->
+          <div class="wf-step">
+
+            <div class="step-left">
+
+              <span class="step-num">07</span>
+
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path d="M24 6L10 12v10c0 9.4 5.8 17.6 14 20 8.2-2.4 14-10.6 14-20V12L24 6z" stroke="currentColor"
+                    stroke-width="1.5" stroke-linejoin="round" />
+                  <path d="M17 24l5 5 9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Garansi Pekerjaan
+              </h3>
+
+              <p class="step-desc">
+                Setiap pekerjaan kami tanggung
+                selama satu tahun penuh.
+              </p>
+
+              <span class="step-badge">
+                1 Tahun Garansi
+              </span>
+
+            </div>
 
           </div>
 
         </div>
 
-        <!-- STEP 02 -->
-        <div class="wf-step">
-
-          <div class="step-left">
-
-            <span class="step-num">02</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="10"
-                  y="14"
-                  width="28"
-                  height="20"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-                <path
-                  d="M14 14v-2a4 4 0 014-4h8a4 4 0 014 4v2"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-                <path
-                  d="M16 24h16M16 30h16"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
-            </div>
-
-          </div>
-
-          <div class="step-body">
-
-            <h3 class="step-title">
-              Survei &amp; Pengukuran
-            </h3>
-
-            <p class="step-desc">
-              Survei lapangan dan pengukuran
-              untuk data akurat dan presisi.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- STEP 03 -->
-        <div class="wf-step">
-
-          <div class="step-left">
-
-            <span class="step-num">03</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle
-                  cx="24"
-                  cy="24"
-                  r="14"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-                <path
-                  d="M12 24l6-6 12 12 6-6"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"/>
-              </svg>
-            </div>
-
-          </div>
-
-          <div class="step-body">
-
-            <h3 class="step-title">
-              Pengembangan Desain
-            </h3>
-
-            <p class="step-desc">
-              Dari konsep awal hingga gambar teknis
-              dan detail konstruksi.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- STEP 04 -->
-        <div class="wf-step">
-
-          <div class="step-left">
-
-            <span class="step-num">04</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path
-                  d="M24 8v32M8 24h32"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"/>
-                <circle
-                  cx="24"
-                  cy="24"
-                  r="16"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
-            </div>
-
-          </div>
-
-          <div class="step-body">
-
-            <h3 class="step-title">
-              Penyusunan Anggaran
-            </h3>
-
-            <p class="step-desc">
-              Estimasi biaya secara transparan
-              dan terpercaya.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- STEP 05 -->
-        <div class="wf-step">
-
-          <div class="step-left">
-
-            <span class="step-num">05</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="8"
-                  y="12"
-                  width="32"
-                  height="28"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
-            </div>
-
-          </div>
-
-          <div class="step-body">
-
-            <h3 class="step-title">
-              Konstruksi
-            </h3>
-
-            <p class="step-desc">
-              Eksekusi pembangunan sesuai desain
-              dan standar kualitas terbaik.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- STEP 06 -->
-        <div class="wf-step">
-
-          <div class="step-left">
-
-            <span class="step-num">06</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="10"
-                  y="8"
-                  width="28"
-                  height="32"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-                <path
-                  d="M14 16h20M14 24h20M14 32h16"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"/>
-              </svg>
-            </div>
-
-          </div>
-
-          <div class="step-body">
-
-            <h3 class="step-title">
-              Serah Terima
-            </h3>
-
-            <p class="step-desc">
-              Pengecekan akhir dan penyerahan proyek
-              yang siap digunakan.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- STEP 07 -->
-        <div class="wf-step">
-
-          <div class="step-left">
-
-            <span class="step-num">07</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path
-                  d="M24 6L10 12v10c0 9.4 5.8 17.6 14 20 8.2-2.4 14-10.6 14-20V12L24 6z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"/>
-                <path
-                  d="M17 24l5 5 9-9"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-              </svg>
-            </div>
-
-          </div>
-
-          <div class="step-body">
-
-            <h3 class="step-title">
-              Garansi Pekerjaan
-            </h3>
-
-            <p class="step-desc">
-              Setiap pekerjaan kami tanggung
-              selama satu tahun penuh.
-            </p>
-
-            <span class="step-badge">
-              1 Tahun Garansi
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- =========================================================
+        <!-- =========================================================
            DESKTOP VERSION
            (visible >= 960px)
       ========================================================= -->
 
-      <!-- ROW 1 -->
-      <div class="wf-row wf-row-top">
+        <!-- ROW 1 -->
+        <div class="wf-row wf-row-top">
 
-        <!-- ARROW TRACK -->
-        <svg
-          class="arrow-track"
-          viewBox="0 0 1200 68"
-          preserveAspectRatio="none"
-          height="68"
-        >
+          <!-- ARROW TRACK -->
+          <svg class="arrow-track" viewBox="0 0 1200 68" preserveAspectRatio="none" height="68">
 
-          <path
-            d="M 150 60 C 220 10, 380 10, 450 60"
-            stroke="#d4af37"
-            stroke-width="1.2"
-            fill="none"
-            stroke-dasharray="5,5"
-            opacity=".55"/>
+            <path d="M 150 60 C 220 10, 380 10, 450 60" stroke="#d4af37" stroke-width="1.2" fill="none"
+              stroke-dasharray="5,5" opacity=".55" />
 
-          <polygon
-            points="444,53 450,60 456,53"
-            fill="#d4af37"
-            opacity=".65"/>
+            <polygon points="444,53 450,60 456,53" fill="#d4af37" opacity=".65" />
 
-          <path
-            d="M 450 60 C 520 10, 680 10, 750 60"
-            stroke="#d4af37"
-            stroke-width="1.2"
-            fill="none"
-            stroke-dasharray="5,5"
-            opacity=".55"/>
+            <path d="M 450 60 C 520 10, 680 10, 750 60" stroke="#d4af37" stroke-width="1.2" fill="none"
+              stroke-dasharray="5,5" opacity=".55" />
 
-          <polygon
-            points="744,53 750,60 756,53"
-            fill="#d4af37"
-            opacity=".65"/>
+            <polygon points="744,53 750,60 756,53" fill="#d4af37" opacity=".65" />
 
-          <path
-            d="M 750 60 C 820 10, 980 10, 1050 60"
-            stroke="#d4af37"
-            stroke-width="1.2"
-            fill="none"
-            stroke-dasharray="5,5"
-            opacity=".55"/>
+            <path d="M 750 60 C 820 10, 980 10, 1050 60" stroke="#d4af37" stroke-width="1.2" fill="none"
+              stroke-dasharray="5,5" opacity=".55" />
 
-          <polygon
-            points="1044,53 1050,60 1056,53"
-            fill="#d4af37"
-            opacity=".65"/>
+            <polygon points="1044,53 1050,60 1056,53" fill="#d4af37" opacity=".65" />
 
-        </svg>
+          </svg>
 
-        <!-- STEP 01 -->
-        <div class="wf-step">
-          <div class="step-left">
-            <span class="step-num">01</span>
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="16" r="6"
-                  stroke="currentColor" stroke-width="1.5"/>
-                <path
-                  d="M12 32c0-6.6 5.4-12 12-12s12 5.4 12 12v4H12v-4z"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
+          <!-- STEP 01 -->
+          <div class="wf-step">
+            <div class="step-left">
+              <span class="step-num">01</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M12 32c0-6.6 5.4-12 12-12s12 5.4 12 12v4H12v-4z" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="step-body">
+              <h3 class="step-title">Konsultasi Awal</h3>
+              <p class="step-desc">
+                Diskusi untuk memahami kebutuhan,
+                visi, dan tujuan proyek.
+              </p>
             </div>
           </div>
 
-          <div class="step-body">
-            <h3 class="step-title">Konsultasi Awal</h3>
-            <p class="step-desc">
-              Diskusi untuk memahami kebutuhan,
-              visi, dan tujuan proyek.
-            </p>
+          <!-- STEP 02 -->
+          <div class="wf-step">
+            <div class="step-left">
+              <span class="step-num">02</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="10" y="14" width="28" height="20" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="step-body">
+              <h3 class="step-title">
+                Survei &amp; Pengukuran
+              </h3>
+
+              <p class="step-desc">
+                Survei lapangan dan pengukuran
+                untuk data akurat dan presisi.
+              </p>
+            </div>
           </div>
+
+          <!-- STEP 03 -->
+          <div class="wf-step">
+            <div class="step-left">
+              <span class="step-num">03</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="step-body">
+              <h3 class="step-title">
+                Pengembangan Desain
+              </h3>
+
+              <p class="step-desc">
+                Dari konsep awal hingga gambar teknis
+                dan detail konstruksi.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 04 -->
+          <div class="wf-step">
+            <div class="step-left">
+              <span class="step-num">04</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="step-body">
+              <h3 class="step-title">
+                Penyusunan Anggaran
+              </h3>
+
+              <p class="step-desc">
+                Estimasi biaya secara transparan
+                dan terpercaya.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        <!-- STEP 02 -->
-        <div class="wf-step">
-          <div class="step-left">
-            <span class="step-num">02</span>
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="10"
-                  y="14"
-                  width="28"
-                  height="20"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
+        <!-- ROW 2 -->
+        <div class="wf-row wf-row-bot">
+
+          <!-- ARROW TRACK -->
+          <svg class="arrow-track" viewBox="0 0 1200 68" preserveAspectRatio="none" height="68">
+
+            <path d="M 150 60 C 220 10, 380 10, 450 60" stroke="#d4af37" stroke-width="1.2" fill="none"
+              stroke-dasharray="5,5" opacity=".55" />
+
+            <polygon points="444,53 450,60 456,53" fill="#d4af37" opacity=".65" />
+
+            <path d="M 450 60 C 520 10, 680 10, 750 60" stroke="#d4af37" stroke-width="1.2" fill="none"
+              stroke-dasharray="5,5" opacity=".55" />
+
+            <polygon points="744,53 750,60 756,53" fill="#d4af37" opacity=".65" />
+
+          </svg>
+
+          <!-- STEP 05 -->
+          <div class="wf-step">
+            <div class="step-left">
+              <span class="step-num">05</span>
+
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="8" y="12" width="32" height="28" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="step-body">
+              <h3 class="step-title">Konstruksi</h3>
+
+              <p class="step-desc">
+                Eksekusi pembangunan sesuai desain
+                dan standar kualitas terbaik.
+              </p>
             </div>
           </div>
 
-          <div class="step-body">
-            <h3 class="step-title">
-              Survei &amp; Pengukuran
-            </h3>
+          <!-- STEP 06 -->
+          <div class="wf-step">
+            <div class="step-left">
+              <span class="step-num">06</span>
 
-            <p class="step-desc">
-              Survei lapangan dan pengukuran
-              untuk data akurat dan presisi.
-            </p>
-          </div>
-        </div>
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="10" y="8" width="28" height="32" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
 
-        <!-- STEP 03 -->
-        <div class="wf-step">
-          <div class="step-left">
-            <span class="step-num">03</span>
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle
-                  cx="24"
-                  cy="24"
-                  r="14"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
+            <div class="step-body">
+              <h3 class="step-title">Serah Terima</h3>
+
+              <p class="step-desc">
+                Pengecekan akhir dan penyerahan proyek
+                yang siap digunakan.
+              </p>
             </div>
           </div>
 
-          <div class="step-body">
-            <h3 class="step-title">
-              Pengembangan Desain
-            </h3>
+          <!-- STEP 07 -->
+          <div class="wf-step">
+            <div class="step-left">
+              <span class="step-num">07</span>
 
-            <p class="step-desc">
-              Dari konsep awal hingga gambar teknis
-              dan detail konstruksi.
-            </p>
-          </div>
-        </div>
+              <div class="step-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path d="M24 6L10 12v10c0 9.4 5.8 17.6 14 20 8.2-2.4 14-10.6 14-20V12L24 6z" stroke="currentColor"
+                    stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
 
-        <!-- STEP 04 -->
-        <div class="wf-step">
-          <div class="step-left">
-            <span class="step-num">04</span>
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle
-                  cx="24"
-                  cy="24"
-                  r="16"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
+            <div class="step-body">
+
+              <h3 class="step-title">
+                Garansi Pekerjaan
+              </h3>
+
+              <p class="step-desc">
+                Setiap pekerjaan kami tanggung
+                selama satu tahun penuh.
+              </p>
+
+              <span class="step-badge">
+                1 Tahun Garansi
+              </span>
+
             </div>
           </div>
 
-          <div class="step-body">
-            <h3 class="step-title">
-              Penyusunan Anggaran
-            </h3>
+          <!-- SPACER -->
+          <div class="wf-spacer"></div>
 
-            <p class="step-desc">
-              Estimasi biaya secara transparan
-              dan terpercaya.
-            </p>
-          </div>
         </div>
 
       </div>
-
-      <!-- ROW 2 -->
-      <div class="wf-row wf-row-bot">
-
-        <!-- ARROW TRACK -->
-        <svg
-          class="arrow-track"
-          viewBox="0 0 1200 68"
-          preserveAspectRatio="none"
-          height="68"
-        >
-
-          <path
-            d="M 150 60 C 220 10, 380 10, 450 60"
-            stroke="#d4af37"
-            stroke-width="1.2"
-            fill="none"
-            stroke-dasharray="5,5"
-            opacity=".55"/>
-
-          <polygon
-            points="444,53 450,60 456,53"
-            fill="#d4af37"
-            opacity=".65"/>
-
-          <path
-            d="M 450 60 C 520 10, 680 10, 750 60"
-            stroke="#d4af37"
-            stroke-width="1.2"
-            fill="none"
-            stroke-dasharray="5,5"
-            opacity=".55"/>
-
-          <polygon
-            points="744,53 750,60 756,53"
-            fill="#d4af37"
-            opacity=".65"/>
-
-        </svg>
-
-        <!-- STEP 05 -->
-        <div class="wf-step">
-          <div class="step-left">
-            <span class="step-num">05</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="8"
-                  y="12"
-                  width="32"
-                  height="28"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="step-body">
-            <h3 class="step-title">Konstruksi</h3>
-
-            <p class="step-desc">
-              Eksekusi pembangunan sesuai desain
-              dan standar kualitas terbaik.
-            </p>
-          </div>
-        </div>
-
-        <!-- STEP 06 -->
-        <div class="wf-step">
-          <div class="step-left">
-            <span class="step-num">06</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="10"
-                  y="8"
-                  width="28"
-                  height="32"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="step-body">
-            <h3 class="step-title">Serah Terima</h3>
-
-            <p class="step-desc">
-              Pengecekan akhir dan penyerahan proyek
-              yang siap digunakan.
-            </p>
-          </div>
-        </div>
-
-        <!-- STEP 07 -->
-        <div class="wf-step">
-          <div class="step-left">
-            <span class="step-num">07</span>
-
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path
-                  d="M24 6L10 12v10c0 9.4 5.8 17.6 14 20 8.2-2.4 14-10.6 14-20V12L24 6z"
-                  stroke="currentColor"
-                  stroke-width="1.5"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="step-body">
-
-            <h3 class="step-title">
-              Garansi Pekerjaan
-            </h3>
-
-            <p class="step-desc">
-              Setiap pekerjaan kami tanggung
-              selama satu tahun penuh.
-            </p>
-
-            <span class="step-badge">
-              1 Tahun Garansi
-            </span>
-
-          </div>
-        </div>
-
-        <!-- SPACER -->
-        <div class="wf-spacer"></div>
-
-      </div>
-
     </div>
-  </div>
 
-</section>
+  </section>
 
 
 
@@ -1317,7 +1141,7 @@
           data-project-cat="" data-project-desc=""
           data-images='[{"src":"/interior/newint/int5.png","caption":""},{"src":"/interior/newint/int6.png","caption":""},{"src":"/interior/newint/int7.png","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/interior/newint/int3.png" alt="Interior Project" decoding="async" fetchpriority="high" />
+            <img src="/interior/newint/int3.webp" alt="Interior Project" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Interior</span>
@@ -1332,7 +1156,7 @@
           data-project-cat="" data-project-desc=""
           data-images='[{"src":"/interior/newint/int8.jpg","caption":""},{"src":"/interior/newint/int9.png","caption":""},{"src":"/interior/newint/int10.jpg","caption":""}]'>
           <div class="portfolio-img-wrap">
-            <img src="/interior/newint/int2.png" alt="Interior Project" decoding="async" fetchpriority="high" />
+            <img src="/interior/newint/int2.webp" alt="Interior Project" decoding="async" fetchpriority="high" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Interior</span>
@@ -1382,7 +1206,8 @@
       <div class="contact-grid">
         <div class="contact-info reveal">
           <h2 class="section-heading"><br />Mulai <br><em>Proyek Anda.</em></h2>
-          <p>Konsultasikan proyek anda berikan visi anda untuk proyek anda, kami akan merespons anda secepatnya, gratis.</p>
+          <p>Konsultasikan proyek anda berikan visi anda untuk proyek anda, kami akan merespons anda secepatnya, gratis.
+          </p>
           <div class="contact-details">
 
             <!-- WhatsApp -->

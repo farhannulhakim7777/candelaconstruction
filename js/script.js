@@ -78,15 +78,16 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
   let idx = 0
   let autoSlide
 
-  /* preload images */
-  slides.forEach(slide => {
-    const img = qs('img', slide)
-
-    if (img?.src) {
+  /* preload next slide only */
+  const preloadNext = currentIdx => {
+    const nextIdx = (currentIdx + 1) % slides.length
+    const img = slides[nextIdx]?.querySelector('img')
+    if (img && !img.complete && img.dataset.preloaded !== 'true') {
       const preload = new Image()
       preload.src = img.src
+      img.dataset.preloaded = 'true'
     }
-  })
+  }
 
   /* build dots */
   const buildDots = () => {
@@ -118,6 +119,7 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
     ;[...dotsWrap.children].forEach((dot, i) => {
       dot.classList.toggle('active', i === idx)
     })
+    preloadNext(idx)
   }
 
   /* start auto slider */
@@ -142,6 +144,11 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
   qs('.hero-media-nav.next')?.addEventListener('click', () => {
     goTo(idx + 1)
     restartAuto()
+  })
+
+  /* preload on hover next button */
+  qs('.hero-media-nav.next')?.addEventListener('mouseenter', () => {
+    preloadNext(idx)
   })
 
   /* init */
