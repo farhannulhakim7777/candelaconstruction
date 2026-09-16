@@ -431,37 +431,7 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
   )
 })()
 
-function getCookie(name) {
-  const match = document.cookie.match(
-    new RegExp('(^| )' + name + '=([^;]+)')
-  );
 
-  return match ? decodeURIComponent(match[2]) : '';
-}
-
-function trackWhatsApp() {
-  const eventId =
-    'whatsapp_' +
-    Date.now() +
-    '_' +
-    Math.random().toString(36).substring(2, 10);
-
-  const fbp = getCookie('_fbp');
-  const fbc = getCookie('_fbc');
-
-  // Kirim event melalui Meta Pixel
-  if (typeof fbq === 'function') {
-    fbq(
-      'track',
-      'Lead',
-      {
-        content_name: 'WhatsApp Contact'
-      },
-      {
-        eventID: eventId
-      }
-    );
-  }
 
 function getCookie(name) {
   const match = document.cookie.match(
