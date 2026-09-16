@@ -463,6 +463,38 @@ function trackWhatsApp() {
     );
   }
 
+function getCookie(name) {
+  const match = document.cookie.match(
+    new RegExp('(^| )' + name + '=([^;]+)')
+  );
+
+  return match ? decodeURIComponent(match[2]) : '';
+}
+
+function trackWhatsApp() {
+  const eventId =
+    'whatsapp_' +
+    Date.now() +
+    '_' +
+    Math.random().toString(36).substring(2, 10);
+
+  const fbp = getCookie('_fbp');
+  const fbc = getCookie('_fbc');
+
+  // Kirim event melalui Meta Pixel
+  if (typeof fbq === 'function') {
+    fbq(
+      'track',
+      'Lead',
+      {
+        content_name: 'WhatsApp Contact'
+      },
+      {
+        eventID: eventId
+      }
+    );
+  }
+
   // Kirim event yang sama ke server CAPI
   fetch('https://api.candelakonstruksi.com/capi.php', {
     method: 'POST',
@@ -475,22 +507,6 @@ function trackWhatsApp() {
       event_source_url: window.location.href,
       fbp: fbp,
       fbc: fbc
-    })
-  }).catch(function(error) {
-    console.error('CAPI error:', error);
-  });
-}
-
-  // Kirim event yang sama ke server CAPI
-  fetch('https://api.candelakonstruksi.com/capi.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      event_name: 'Lead',
-      event_id: eventId,
-      event_source_url: window.location.href
     })
   }).catch(function(error) {
     console.error('CAPI error:', error);
