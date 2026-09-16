@@ -471,13 +471,14 @@ function trackWhatsApp() {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      event_name: 'Lead',
-      event_id: eventId,
-      event_source_url: window.location.href,
-      fbp: fbp,
-      fbc: fbc
-    })
+   body: JSON.stringify({
+  event_name: 'Lead',
+  event_id: eventId,
+  event_source_url: window.location.href,
+  fbp: fbp,
+  fbc: fbc,
+  test_event_code: 'TEST20560'
+})
   }).catch(function(error) {
     console.error('CAPI error:', error);
   });
