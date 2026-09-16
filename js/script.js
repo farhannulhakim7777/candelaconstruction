@@ -340,9 +340,12 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
       const valid = [...form.querySelectorAll('input, select, textarea')]
         .map(validate)
         .every(Boolean)
-      if (!valid) return
+     if (!valid) return
 
-      const btn = form.querySelector('[type="submit"]')
+// Track form submission ke Meta Pixel + CAPI
+trackContactForm(form)
+
+const btn = form.querySelector('[type="submit"]')
       const span = btn?.querySelector('span')
       if (btn) {
         btn.disabled = true
@@ -385,6 +388,54 @@ const qsa = (s, c = document) => [...c.querySelectorAll(s)]
     })
   })
 })()
+
+  function trackContactForm(form) {
+  const eventId =
+    'contact_form_' +
+    Date.now() +
+    '_' +
+    Math.random().toString(36).substring(2, 10)
+
+  const email =
+    form.querySelector('[name="email"]')?.value.trim() || ''
+
+  const fbp = getCookie('_fbp')
+  const fbc = getCookie('_fbc')
+
+  // Kirim event melalui Meta Pixel
+  if (typeof fbq === 'function') {
+    fbq(
+      'track',
+      'Lead',
+      {
+        content_name: 'Contact Form'
+      },
+      {
+        eventID: eventId
+      }
+    )
+  }
+
+  // Kirim event yang sama ke server CAPI
+  fetch('https://api.candelakonstruksi.com/capi.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    keepalive: true,
+    body: JSON.stringify({
+      event_name: 'Lead',
+      event_id: eventId,
+      event_source_url: window.location.href,
+      fbp: fbp,
+      fbc: fbc,
+      email: email,
+      test_event_code: 'TEST20560'
+    })
+  }).catch(function(error) {
+    console.error('CAPI form error:', error)
+  })
+}
 
 /* ─── SMOOTH SCROLL */
 ;(function () {
