@@ -430,7 +430,7 @@ const btn = form.querySelector('[type="submit"]')
       fbp: fbp,
       fbc: fbc,
       email: email,
-      test_event_code: 'TEST20560'
+     test_event_code: 'TEST33087'
     })
   }).catch(function(error) {
     console.error('CAPI form error:', error)
@@ -528,7 +528,7 @@ function trackWhatsApp() {
   event_source_url: window.location.href,
   fbp: fbp,
   fbc: fbc,
-  test_event_code: 'TEST20560'
+  test_event_code: 'TEST33087'
 })
   }).catch(function(error) {
     console.error('CAPI error:', error);
